@@ -15,30 +15,29 @@
 
 ```text
 index.html       الصفحة الرئيسية
-services.html    صفحة الخدمات الجديدة، لو هتتعمل
-css/style.css    كل الـ tokens والـ components
+about.html       صفحة من نحن
+services.html    صفحة الخدمات
+css/style.css    الـ global tokens والـ components المشتركة
+  css/about.css   ستايل صفحة من نحن فقط، ويستورد style.css
+css/services.css ستايل صفحة الخدمات فقط، ويستورد style.css
 js/script.js    menu / tabs / accordion
 assets-design/   الصور والأيقونات واللوجوهات
 ```
 
 في الصفحة الجديدة، انسخ الـ `head` والـ Navbar والـ Footer من `index.html`، وغيّر محتوى `<main>` فقط.
 
+اربط ملف الصفحة فقط مثل `services.css`. أول سطر فيه يستورد `style.css`، فكل الـ global tokens والكلاسات المشتركة توصل للصفحة من غير تكرار أو تحميل مزدوج.
+
 ## شكل أي صفحة
 
 ```html
 <body>
   <div class="page-shell">
-    <header class="site-header">
-      Navbar
-    </header>
+    <header class="site-header">Navbar</header>
 
-    <main class="page-main">
-      محتوى الفريم الجديد هنا
-    </main>
+    <main class="page-main">محتوى الفريم الجديد هنا</main>
 
-    <footer class="site-footer">
-      Footer
-    </footer>
+    <footer class="site-footer">Footer</footer>
   </div>
 </body>
 ```

@@ -1,0 +1,21 @@
+@import url("./style.css");
+
+/* Services page styles: global tokens and Bootstrap provide the foundation. */
+
+.services-page-section {
+  padding: var(--space-16) 0 var(--space-20);
+}
+
+.services-page-section .section-header {
+  max-width: 760px;
+  margin-right: auto;
+  margin-bottom: var(--space-12);
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .services-page-section {
+    padding: var(--space-10) 0 var(--space-16);
+  }
+}
+
