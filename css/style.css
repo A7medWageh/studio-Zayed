@@ -1,8 +1,72 @@
 /* Base */
 :root {
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+    --space-9: 36px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-14: 56px;
+    --space-16: 64px;
+    --space-20: 80px;
+    --space-24: 96px;
+
+    --font-display-1: 64px;
+    --font-display-2: 48px;
+    --font-display-3: 40px;
+    --font-heading-1: 32px;
+    --font-heading-2: 28px;
+    --font-heading-3: 24px;
+    --font-heading-4: 20px;
+    --font-heading-5: 18px;
+    --font-heading-6: 16px;
+    --font-body: 14px;
+    --font-button: 14px;
+
+    --color-primary-900: #963b0d;
+    --color-primary-800: #b84e08;
+    --color-primary-700: #d66700;
+    --color-primary-600: #f18a00;
+    --color-primary-500: #fdba33;
+    --color-primary-400: #ffca4f;
+    --color-primary-300: #ffe08b;
+    --color-primary-200: #ffedc2;
+    --color-primary-100: #fff9ea;
+    --color-success-900: #444444;
+    --color-success-800: #505050;
+    --color-success-700: #606060;
+    --color-success-600: #707070;
+    --color-success-500: #8b8b8b;
+    --color-success-400: #adadad;
+    --color-success-300: #cfcfcf;
+    --color-success-200: #e7e7e7;
+    --color-success-100: #f6f6f6;
+    --color-gray-900: #1d2026;
+    --color-gray-800: #343944;
+    --color-gray-700: #515867;
+    --color-gray-600: #707888;
+    --color-gray-500: #8e96a5;
+    --color-gray-400: #a3a9b7;
+    --color-gray-300: #b5bac7;
+    --color-gray-200: #cdd1da;
+    --color-gray-100: #e9ebf0;
+    --color-white: #ffffff;
+
+    --layout-columns-desktop: 12;
+    --layout-margin-desktop: 120px;
+    --layout-gutter-desktop: 40px;
+    --layout-columns-mobile: 4;
+    --layout-margin-mobile: 16px;
+    --layout-gutter-mobile: 16px;
+
     --black: #0c0c0c;
     --white: #fbfbfb;
-    --primary: #fdba33;
+    --primary: var(--color-primary-500);
     --text-muted: rgba(255, 255, 255, 0.5);
     --text-soft: rgba(255, 255, 255, 0.88);
     --border-soft: rgba(255, 255, 255, 0.2);
@@ -101,6 +165,44 @@ select {
 }
 
 /* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: var(--font-button);
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--color-primary-500);
+    color: var(--color-gray-900);
+}
+
+.btn-secondary {
+    border-color: var(--color-primary-500);
+    background: transparent;
+    color: var(--color-primary-500);
+}
+
+.btn-ghost {
+    border-color: var(--border-soft);
+    background: transparent;
+    color: var(--color-white);
+}
+
 .pill-button {
     display: inline-flex;
     align-items: center;
