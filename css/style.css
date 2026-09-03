@@ -16,14 +16,14 @@
     --space-20: 80px;
     --space-24: 96px;
 
-    --font-display-1: 64px;
-    --font-display-2: 48px;
-    --font-display-3: 40px;
-    --font-heading-1: 32px;
-    --font-heading-2: 28px;
-    --font-heading-3: 24px;
-    --font-heading-4: 20px;
-    --font-heading-5: 18px;
+    --font-display-1: 96px;
+    --font-display-2: 64px;
+    --font-display-3: 48px;
+    --font-heading-1: 40px;
+    --font-heading-2: 32px;
+    --font-heading-3: 28px;
+    --font-heading-4: 24px;
+    --font-heading-5: 20px;
     --font-heading-6: 16px;
     --font-body: 14px;
     --font-button: 14px;
@@ -120,9 +120,9 @@ select {
 
 .content-wrap {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 /* Typography */
@@ -145,7 +145,7 @@ select {
 
 .section-title {
     margin: 0;
-    font-size: 24px;
+    font-size: var(--font-heading-4);
     font-weight: 500;
     line-height: 40px;
     color: #fff;
@@ -158,7 +158,7 @@ select {
 
 .section-lead {
     margin: 0;
-    font-size: 16px;
+    font-size: var(--font-body);
     font-weight: 400;
     line-height: 24px;
     color: var(--text-muted);
@@ -207,14 +207,14 @@ select {
     display: inline-flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 20px;
+    gap: var(--space-5);
     min-height: 48px;
-    padding: 10px 20px 10px 10px;
+    padding: 10px var(--space-5) 10px var(--space-2);
     border-radius: 23px;
     border: 1px solid var(--border-soft);
     background: transparent;
     color: #fff;
-    font-size: 16px;
+    font-size: var(--font-button);
     font-weight: 400;
     line-height: 1;
     cursor: pointer;
@@ -259,7 +259,7 @@ select {
     border-radius: 8px;
     background: var(--primary);
     color: #131313;
-    font-size: 14px;
+    font-size: var(--font-button);
     font-weight: 400;
     line-height: 15px;
     cursor: pointer;
@@ -741,21 +741,23 @@ select {
 .sector-grid,
 .system-grid {
     direction: rtl;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--layout-gutter-desktop);
 }
 
 .reason-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
+    gap: var(--space-8);
 }
 
 .reason-card {
+    grid-column: span 4;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 16px;
+    gap: var(--space-4);
     min-height: 210px;
-    padding: 32px;
+    padding: var(--space-8);
     border: 1px solid var(--card-border);
     border-radius: 24px;
     background: var(--card-bg);
@@ -807,8 +809,11 @@ select {
 
 .system-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: var(--space-6);
+}
+
+.system-card {
+    grid-column: span 4;
 }
 
 .system-card {
@@ -880,11 +885,11 @@ select {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px 24px;
+    gap: var(--space-8) var(--space-6);
 }
 
 .service-card {
+    grid-column: span 4;
     min-height: 358px;
     padding: 32px;
     border: 1px solid var(--card-border);
@@ -1066,11 +1071,11 @@ select {
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: var(--space-6);
 }
 
 .pricing-card {
+    grid-column: span 4;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -1194,11 +1199,11 @@ select {
 
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
+    gap: var(--space-8);
 }
 
 .work-card {
+    grid-column: span 4;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1256,11 +1261,11 @@ select {
 
 .sector-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
+    gap: var(--space-8);
 }
 
 .sector-card {
+    grid-column: span 4;
     padding: 32px;
     border: 1px solid var(--card-border);
     border-radius: 24px;
@@ -1745,6 +1750,11 @@ select {
 
 /* Responsive */
 @media (max-width: 1199px) {
+    .content-wrap {
+        padding-right: var(--space-5);
+        padding-left: var(--space-5);
+    }
+
     .site-header,
     .work-section {
         padding-left: 24px;
@@ -1761,7 +1771,16 @@ select {
     .work-grid,
     .sector-grid,
     .system-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .reason-card,
+    .service-card,
+    .pricing-card,
+    .work-card,
+    .sector-card,
+    .system-card {
+        grid-column: span 3;
     }
 
     .packages-header,
@@ -1937,6 +1956,11 @@ select {
 }
 
 @media (max-width: 767px) {
+    .content-wrap {
+        padding-right: var(--layout-margin-mobile);
+        padding-left: var(--layout-margin-mobile);
+    }
+
     .navbar-spotlight {
         height: 480px;
     }
@@ -1960,7 +1984,16 @@ select {
     .work-grid,
     .sector-grid,
     .system-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .reason-card,
+    .service-card,
+    .pricing-card,
+    .work-card,
+    .sector-card,
+    .system-card {
+        grid-column: span 4;
     }
 
     .section-title,
