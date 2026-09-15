@@ -340,24 +340,128 @@
 
 /* ── Responsive ── */
 @media (max-width: 991px) {
+  .packages-page-hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .packages-filter-row {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
   }
+
+  .packages-sub-intro {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .packages-sub-title,
+  .packages-sub-lead {
+    text-align: center;
+  }
+
+  .packages-filter-tabs {
+    justify-content: center;
+  }
+
   .packages-cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
 }
 
-@media (max-width: 640px) {
-  .packages-cards-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 767px) {
+  .packages-page-hero {
+    padding-top: 24px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    gap: 24px;
   }
+
+  .packages-hero-header {
+    gap: 14px;
+  }
+
   .packages-hero-title {
     font-size: 22px;
+    line-height: 1.4;
+    text-align: center;
   }
+
+  .packages-hero-lead {
+    font-size: 13.5px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .packages-filter-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+    direction: rtl !important;
+  }
+
+  .packages-filter-tab {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 44px !important;
+    padding: 0 14px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 50px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  .packages-notice-card {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 16px 18px;
+  }
+
+  .packages-notice-header {
+    justify-content: center;
+  }
+
+  .packages-notice-text {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .packages-cards-grid {
+    grid-template-columns: minmax(0, 420px) !important;
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto;
+    width: 100%;
+    gap: 20px;
+  }
+
   .pkg-card {
-    padding: 22px 18px;
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 20px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .packages-page-hero {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .packages-hero-title {
+    font-size: 20px;
   }
 }

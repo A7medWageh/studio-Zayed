@@ -450,12 +450,59 @@
 }
 
 @media (max-width: 767px) {
-  .sd-benefits-grid { grid-template-columns: 1fr; }
-  .sd-process-grid  { grid-template-columns: 1fr; }
-  .sd-form-row      { grid-template-columns: 1fr; }
-  .sd-deliv-row     { flex-wrap: wrap; }
-  .sd-deliv-chip    { flex: 1 1 40%; }
-  .sd-info-col      { flex-direction: column; }
+  .sd-wrap { padding: 0 20px; }
+  
+  .sd-hero {
+    padding: 24px 0 20px;
+    text-align: center;
+  }
+
+  .sd-hero-title {
+    font-size: 24px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .sd-hero-lead {
+    font-size: 13.5px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .sd-about {
+    padding: 36px 0;
+    text-align: center;
+  }
+
+  .sd-about-title,
+  .sd-about-lead,
+  .sd-benefits-title {
+    text-align: center;
+  }
+
+  .sd-benefits-grid { grid-template-columns: 1fr; gap: 12px; }
+  .sd-process-grid  { grid-template-columns: 1fr; gap: 12px; }
+  .sd-process-title { text-align: center; }
+  .sd-deliv-title   { text-align: center; }
+  .sd-deliv-row     { flex-direction: column; gap: 10px; }
+  .sd-deliv-chip    { width: 100%; flex: 1 1 100%; }
+
+  .sd-quote-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .sd-quote-header h2,
+  .sd-quote-header p {
+    text-align: center;
+  }
+
+  .sd-form-row { grid-template-columns: 1fr; gap: 12px; }
+  .sd-info-col { flex-direction: column; gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .sd-wrap { padding: 0 16px; }
+  .sd-hero-title { font-size: 20px; }
 }
 
 .sd-info-icon img {

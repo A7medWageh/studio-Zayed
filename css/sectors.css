@@ -10,137 +10,22 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
-  background-color: #000000;
+  background-color: transparent;
   color: #ffffff;
   font-family: "IBM Plex Sans Arabic", sans-serif;
   padding-bottom: 120px;
 }
 
-/* ── Ambient Background Lighting (Figma Rays) ── */
-.sectors-rays-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 950px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.sectors-ray {
-  position: absolute;
-  transform-origin: top left;
-  pointer-events: none;
-}
-
-.sectors-ray-1 {
-  width: 165px;
-  height: 512px;
-  left: calc(50% + 560px);
-  top: -96px;
-  transform: rotate(24deg);
-  background: linear-gradient(180deg, rgba(253, 186, 51, 0.24) 0%, rgba(253, 186, 51, 0) 100%);
+.site-header::before {
+  content: "";
+  position: fixed;
+  top: 0%;
+  left: 80%;
+  width: 113.453px;
+  height: 552.008px;
+  transform: rotate(26.691deg);
+  background: linear-gradient(180deg, rgba(253, 186, 51, 0.24) 0%, rgba(253, 186, 51, 0.00) 100%);
   filter: blur(40px);
-}
-
-.sectors-ray-2 {
-  width: 94px;
-  height: 558px;
-  left: calc(50% + 510px);
-  top: -147px;
-  transform: rotate(24deg);
-  background: linear-gradient(180deg, rgba(253, 186, 51, 0.28) 0%, rgba(253, 186, 51, 0) 100%);
-  filter: blur(20px);
-}
-
-.sectors-ray-3 {
-  width: 166px;
-  height: 558px;
-  left: calc(50% + 370px);
-  top: -200px;
-  transform: rotate(24deg);
-  background: linear-gradient(180deg, rgba(253, 186, 51, 0.24) 0%, rgba(253, 186, 51, 0) 100%);
-  filter: blur(40px);
-}
-
-.sectors-ray-4 {
-  width: 292px;
-  height: 557px;
-  left: calc(50% + 50px);
-  top: -177px;
-  transform: rotate(24deg);
-  background: linear-gradient(141deg, rgba(253, 186, 51, 0.14) 0%, rgba(253, 186, 51, 0) 100%);
-  filter: blur(60px);
-}
-
-.sectors-ray-5 {
-  width: 203px;
-  height: 768px;
-  left: calc(50% - 60px);
-  top: -335px;
-  transform: rotate(24deg);
-  background: linear-gradient(180deg, rgba(253, 186, 51, 0.26) 0%, rgba(253, 186, 51, 0) 100%);
-  filter: blur(50px);
-}
-
-.sectors-ray-6 {
-  width: 22px;
-  height: 645px;
-  left: calc(50% - 100px);
-  top: -130px;
-  transform: rotate(25deg);
-  background: linear-gradient(180deg, rgba(253, 186, 51, 0.12) 0%, rgba(253, 186, 51, 0) 100%);
-  filter: blur(10px);
-}
-
-.sectors-ray-7 {
-  width: 120px;
-  height: 558px;
-  left: calc(50% - 290px);
-  top: -114px;
-  transform: rotate(24deg);
-  background: linear-gradient(180deg, rgba(253, 186, 51, 0.20) 0%, rgba(253, 186, 51, 0) 100%);
-  filter: blur(40px);
-}
-
-.sectors-ray-8 {
-  width: 120px;
-  height: 558px;
-  left: calc(50% - 490px);
-  top: -148px;
-  transform: rotate(24deg);
-  background: linear-gradient(180deg, rgba(253, 186, 51, 0.20) 0%, rgba(253, 186, 51, 0) 100%);
-  filter: blur(40px);
-}
-
-.sectors-ray-9 {
-  width: 120px;
-  height: 558px;
-  left: calc(50% - 390px);
-  top: -123px;
-  transform: rotate(24deg);
-  background: linear-gradient(180deg, rgba(253, 186, 51, 0.18) 0%, rgba(253, 186, 51, 0) 75%);
-  filter: blur(40px);
-}
-
-/* ── Top Mesh Grid Background ── */
-.sectors-grid-bg {
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(982px, 94vw);
-  height: 241px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.7;
-}
-
-.sectors-grid-bg svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 /* ── 1. Hero Section ── */
@@ -595,27 +480,29 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .sectors-hero {
-    padding-top: 32px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-top: 24px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   .sectors-hero-title {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.45;
+    text-align: center;
   }
 
   .sectors-hero-lead {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 13.5px;
+    line-height: 24px;
+    text-align: center;
   }
 
   .sectors-content-section {
     padding-top: 24px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
     gap: 28px;
     align-items: center;
   }
@@ -626,7 +513,7 @@
   }
 
   .sectors-sub-title {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
   }
 
@@ -637,7 +524,7 @@
 
   .sectors-cards-grid {
     grid-template-columns: 1fr !important;
-    max-width: 392px;
+    max-width: 420px;
     width: 100%;
     justify-content: center;
     justify-items: center;
@@ -647,8 +534,8 @@
 
   .sector-card {
     width: 100%;
-    max-width: 392px;
-    padding: 24px 20px;
+    max-width: 420px;
+    padding: 26px 20px;
     margin: 0 auto;
   }
 
@@ -662,5 +549,21 @@
 
   .sector-card-desc {
     font-size: 13.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectors-hero {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .sectors-content-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .sectors-hero-title {
+    font-size: 20px;
   }
 }

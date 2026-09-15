@@ -323,23 +323,68 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .pkg-order-wrap {
+    padding: 0 20px;
+  }
+
+  .pkg-order-hero {
+    margin-bottom: 32px;
+  }
+
+  .pkg-order-hero-title {
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .pkg-order-hero-lead {
+    font-size: 13.5px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .pkg-order-section-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .pkg-order-section-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .pkg-order-section-lead {
+    font-size: 13.5px;
+    text-align: center;
+  }
+
   .pkg-form-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
+
   .pkg-order-card {
     padding: 24px 18px;
+    border-radius: 20px;
   }
-  .pkg-order-hero-title {
-    font-size: 24px;
-  }
-  .pkg-order-section-title {
-    font-size: 19px;
-  }
+
   .pkg-form-actions {
     flex-direction: column;
+    gap: 12px;
   }
+
   .pkg-submit-btn,
   .pkg-cancel-btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pkg-order-wrap {
+    padding: 0 16px;
+  }
+
+  .pkg-order-hero-title {
+    font-size: 20px;
   }
 }

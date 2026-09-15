@@ -96,11 +96,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (menuButton && navLinks) {
-    menuButton.addEventListener("click", toggleMobileMenu);
+    menuButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMobileMenu();
+    });
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         closeMobileMenu();
       });
+    });
+    document.addEventListener("click", (e) => {
+      if (!navLinks.contains(e.target) && !menuButton.contains(e.target)) {
+        closeMobileMenu();
+      }
     });
   }
 

@@ -279,60 +279,223 @@ letter-spacing: 0px;
 
 
 /* ...............start president sec */
-.president
-{
-    background-color: #0000;
+.president {
+    background-color: #000;
 }
-.president-text1-circle
-{
+
+.president-text1-circle {
     width: 42px;
-height: 42px;
-gap: 10px;
-opacity: 1;
-padding-top: 8px;
-padding-right: 18px;
-padding-bottom: 8px;
-padding-left: 18px;
-border-radius: 50%;
+    height: 42px;
+    gap: 10px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #FDBA33;
+    color: #111;
+    font-weight: 700;
+    font-size: 20px;
+    flex-shrink: 0;
+}
 
-background-color: #FDBA33;
+.president-text1-h3 {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 1.4;
+    margin: 0;
 }
-.president-text1-h3
-{
-    font-family: IBM Plex Sans Arabic;
-font-weight: 700;
-font-style: Bold;
-font-size: 24px;
-color: #FFFFFF;
-line-height: 50px;
-letter-spacing: 0%;
-vertical-align: middle;
-text-transform: capitalize;
 
+.president-text2-p {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: right;
+    color: #ffffff;
+    margin-bottom: 16px;
 }
-.president-text2-p{
-    font-family: IBM Plex Sans Arabic;
-font-weight: 400;
-font-style: Regular;
-font-size: 16px;
-line-height: 32.3px;
-letter-spacing: 0%;
-text-align: right;
-vertical-align: middle;
-color: #ffff ;
-}
-.president-img img{
+
+.president-img img {
     width: 100%;
     max-width: 590px;
     height: auto;
     opacity: 1;
-    border-bottom-right-radius: 24px;
-    border-bottom-left-radius: 24px;
+    border-radius: 24px;
+}
 
+/* ══════════════════════════════════════════════════════════════════════════
+   Mobile Responsive & Centering Enhancements (About Page)
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+    .about-page-hero .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .our-value2-card {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .president .container {
+        padding: 40px 20px !important;
+    }
 }
-.president
-{
-    background-color: #000;
-    
+
+@media (max-width: 767px) {
+    .about-page-hero {
+        padding-top: 16px;
+    }
+
+    .about-page-hero .container,
+    .our-value .container,
+    .our-value2 .container,
+    .chalenges .container,
+    .president .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .about-page-hero .section-header {
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 24px !important;
+    }
+
+    .about-page-hero .section-title {
+        font-size: 22px !important;
+        line-height: 34px !important;
+        text-align: center !important;
+    }
+
+    .about-page-hero .section-lead {
+        font-size: 14px !important;
+        line-height: 24px !important;
+        text-align: center !important;
+    }
+
+    .about-copy {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .about-heading {
+        font-size: 20px !important;
+        line-height: 30px !important;
+        text-align: center !important;
+    }
+
+    .about-body {
+        font-size: 13.5px !important;
+        line-height: 24px !important;
+        text-align: center !important;
+    }
+
+    .about-note {
+        text-align: center !important;
+        padding: 18px 16px !important;
+    }
+
+    .about-note-title,
+    .about-note-text {
+        text-align: center !important;
+    }
+
+    .about-copy .pill-button {
+        margin: 12px auto 0 !important;
+    }
+
+    .feature-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 24px 18px !important;
+    }
+
+    .feature-card-icon {
+        margin: 0 auto 14px !important;
+    }
+
+    .feature-card-title {
+        text-align: center !important;
+        font-size: 18px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .feature-card-text {
+        text-align: center !important;
+        font-size: 13px !important;
+        line-height: 22px !important;
+    }
+
+    .our-value2-card {
+        padding: 24px 18px !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .our-value2-card .section-title {
+        font-size: 18px !important;
+        text-align: center !important;
+        margin-bottom: 6px !important;
+    }
+
+    .our-value2-card .section-lead {
+        font-size: 13px !important;
+        text-align: center !important;
+    }
+
+    /* President section mobile centering */
+    .president .container {
+        padding: 30px 16px !important;
+    }
+
+    .president-contant {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 28px !important;
+    }
+
+    .president-text1 {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+    }
+
+    .president-text1-h3 {
+        font-size: 20px !important;
+        text-align: center !important;
+    }
+
+    .president-text2-p {
+        font-size: 13.5px !important;
+        line-height: 24px !important;
+        text-align: center !important;
+    }
+
+    .president-img {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .president-img img {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
 }
-/* ...............end president sec */
