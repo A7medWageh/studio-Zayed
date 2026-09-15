@@ -1,14 +1,88 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector(".menu-button");
   const navLinks = document.querySelector(".nav-links");
-  const mainNavLinks = document.querySelectorAll('#main-navigation .nav-links a[href^="#"]');
-  const trackedSections = Array.from(mainNavLinks)
-    .map((link) => document.querySelector(link.getAttribute("href")))
-    .filter(Boolean)
-    .sort((firstSection, secondSection) => firstSection.offsetTop - secondSection.offsetTop);
+
+  // ScrollSpy - Only active on the Home page (index.html)
+  const isHomePage = Boolean(
+    document.getElementById("home") ||
+    document.querySelector(".hero-section") ||
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/" ||
+    window.location.pathname.endsWith("/")
+  );
+
+  if (isHomePage) {
+    const menuLinks = Array.from(document.querySelectorAll("#main-navigation .nav-links a.nav-link, #main-menu a.nav-link"));
+
+    const sectionNavMapping = [
+      { id: "home", text: "الرئيسية", href: "index.html" },
+      { id: "about", text: "من نحن", href: "about.html" },
+      { id: "services", text: "الخدمات", href: "services.html" },
+      { id: "packages", text: "الباقات", href: "packages.html" },
+      { id: "work", text: "المخرجات", href: "work.html" },
+      { id: "sectors", text: "القطاعات", href: "sectors.html" },
+      { id: "contact", text: "اتصل بنا", href: "contact.html" }
+    ];
+
+    const trackedSections = sectionNavMapping
+      .map((item) => {
+        const el = document.getElementById(item.id);
+        const link = menuLinks.find((l) => {
+          const href = l.getAttribute("href") || "";
+          const txt = l.textContent.trim();
+          return href === item.href || href === `#${item.id}` || href.endsWith(item.href) || txt === item.text;
+        });
+        return el && link ? { el, link, id: item.id } : null;
+      })
+      .filter(Boolean);
+
+    function setActiveLink(targetLink) {
+      if (!targetLink) return;
+      menuLinks.forEach((link) => {
+        link.classList.remove("active", "is-active");
+        link.removeAttribute("aria-current");
+      });
+      targetLink.classList.add("active", "is-active");
+      targetLink.setAttribute("aria-current", "page");
+    }
+
+    function updateActiveNav() {
+      const scrollY = window.scrollY;
+      const headerHeight = document.querySelector(".site-header")?.offsetHeight || 80;
+
+      // 1. In the beginning (top of home page), strictly highlight 'الرئيسية'
+      if (scrollY < 200) {
+        setActiveLink(trackedSections[0]?.link);
+        return;
+      }
+
+      // 2. If scrolled near the bottom of page, highlight the last section (contact)
+      if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 70) {
+        setActiveLink(trackedSections[trackedSections.length - 1]?.link);
+        return;
+      }
+
+      // 3. Otherwise, track sections as they enter view
+      const triggerLine = scrollY + headerHeight + (window.innerHeight * 0.25);
+      let activeItem = trackedSections[0];
+
+      trackedSections.forEach((item) => {
+        if (item.el.offsetTop <= triggerLine) {
+          activeItem = item;
+        }
+      });
+
+      if (activeItem) {
+        setActiveLink(activeItem.link);
+      }
+    }
+
+    window.addEventListener("scroll", updateActiveNav, { passive: true });
+    window.addEventListener("resize", updateActiveNav);
+    updateActiveNav();
+  }
+
   const accordionHeaders = document.querySelectorAll(".accordion-header");
-  const newsletterForm = document.querySelector(".newsletter-form");
-  const contactForm = document.querySelector(".contact-form");
 
   // Mobile menu toggle
   function toggleMobileMenu() {
@@ -26,35 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         closeMobileMenu();
-        window.setTimeout(updateActiveNav, 250);
       });
     });
-  }
-
-  // Active section tracking
-  function updateActiveNav() {
-    const headerHeight = document.querySelector(".site-header")?.offsetHeight || 0;
-    const activationLine = window.scrollY + headerHeight + window.innerHeight * 0.2;
-    let activeSection = trackedSections[0];
-
-    trackedSections.forEach((section) => {
-      if (section.offsetTop <= activationLine) {
-        activeSection = section;
-      }
-    });
-
-    mainNavLinks.forEach((link) => {
-      const isActive = link.getAttribute("href") === `#${activeSection.id}`;
-      link.classList.toggle("is-active", isActive);
-      link.classList.toggle("active", isActive);
-      link.setAttribute("aria-current", isActive ? "page" : "false");
-    });
-  }
-
-  if (trackedSections.length) {
-    window.addEventListener("scroll", updateActiveNav, { passive: true });
-    window.addEventListener("resize", updateActiveNav);
-    updateActiveNav();
   }
 
   // Accordion toggle
