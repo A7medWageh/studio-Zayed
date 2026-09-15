@@ -18,184 +18,8 @@
   </head>
   <body>
     <div class="page-shell">
-      <!-- Navbar Spotlight Beam -->
-      <div class="navbar-spotlight" aria-hidden="true">
-        <svg
-          class="spotlight-svg"
-          viewBox="0 0 1200 650"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMin slice"
-        >
-          <defs>
-            <radialGradient id="navGlowCore" cx="50%" cy="5%" r="45%">
-              <stop offset="0%" stop-color="#ffce52" stop-opacity="0.8" />
-              <stop offset="25%" stop-color="#f5a828" stop-opacity="0.55" />
-              <stop offset="55%" stop-color="#d47f15" stop-opacity="0.25" />
-              <stop offset="85%" stop-color="#6e3c04" stop-opacity="0.08" />
-              <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-            </radialGradient>
-
-            <radialGradient id="navGlowWide" cx="50%" cy="0%" r="65%">
-              <stop offset="0%" stop-color="#f5a92a" stop-opacity="0.45" />
-              <stop offset="35%" stop-color="#c97712" stop-opacity="0.22" />
-              <stop offset="65%" stop-color="#5a2f02" stop-opacity="0.06" />
-              <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-            </radialGradient>
-
-            <linearGradient
-              id="spotConeGrad"
-              x1="50%"
-              y1="0%"
-              x2="50%"
-              y2="100%"
-            >
-              <stop offset="0%" stop-color="#ffd257" stop-opacity="0.7" />
-              <stop offset="15%" stop-color="#f5a623" stop-opacity="0.5" />
-              <stop offset="45%" stop-color="#cc7810" stop-opacity="0.28" />
-              <stop offset="75%" stop-color="#733d02" stop-opacity="0.08" />
-              <stop offset="100%" stop-color="#0c0c0c" stop-opacity="0" />
-            </linearGradient>
-
-            <linearGradient
-              id="rayGradMain"
-              x1="50%"
-              y1="0%"
-              x2="50%"
-              y2="100%"
-            >
-              <stop offset="0%" stop-color="#ffe484" stop-opacity="0.65" />
-              <stop offset="20%" stop-color="#f8b334" stop-opacity="0.45" />
-              <stop offset="50%" stop-color="#d97f14" stop-opacity="0.2" />
-              <stop offset="80%" stop-color="#572e02" stop-opacity="0.04" />
-              <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-            </linearGradient>
-
-            <linearGradient
-              id="rayGradSide"
-              x1="50%"
-              y1="0%"
-              x2="50%"
-              y2="100%"
-            >
-              <stop offset="0%" stop-color="#fdbb3a" stop-opacity="0.45" />
-              <stop offset="25%" stop-color="#e28c1b" stop-opacity="0.28" />
-              <stop offset="60%" stop-color="#804403" stop-opacity="0.08" />
-              <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-            </linearGradient>
-
-            <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="35" result="blur" />
-            </filter>
-            <filter id="coneBlur" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="22" result="blur" />
-            </filter>
-            <filter id="rayBlur" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="12" result="blur" />
-            </filter>
-            <filter id="tightGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="16" result="blur" />
-            </filter>
-          </defs>
-
-          <!-- Wide Ambient Warmth -->
-          <ellipse
-            cx="600"
-            cy="30"
-            rx="560"
-            ry="320"
-            fill="url(#navGlowWide)"
-            filter="url(#softGlow)"
-          />
-
-          <!-- Main Spotlight Cone -->
-          <path
-            d="M 330 0 L 870 0 L 1080 580 L 120 580 Z"
-            fill="url(#spotConeGrad)"
-            filter="url(#coneBlur)"
-            opacity="0.85"
-          />
-
-          <!-- Inner Spotlight Cone -->
-          <path
-            d="M 420 0 L 780 0 L 920 520 L 280 520 Z"
-            fill="url(#spotConeGrad)"
-            filter="url(#coneBlur)"
-            opacity="0.65"
-          />
-
-          <!-- Volumetric God Rays (Downward Radiating Beams) -->
-          <g filter="url(#rayBlur)" style="mix-blend-mode: screen">
-            <polygon
-              points="560,0 590,0 230,550 170,550"
-              fill="url(#rayGradSide)"
-              opacity="0.45"
-            />
-            <polygon
-              points="570,0 595,0 340,550 290,550"
-              fill="url(#rayGradSide)"
-              opacity="0.6"
-            />
-            <polygon
-              points="580,0 600,0 450,560 405,560"
-              fill="url(#rayGradMain)"
-              opacity="0.7"
-            />
-            <polygon
-              points="588,0 604,0 535,570 495,570"
-              fill="url(#rayGradMain)"
-              opacity="0.8"
-            />
-
-            <polygon
-              points="594,0 606,0 618,570 582,570"
-              fill="url(#rayGradMain)"
-              opacity="0.9"
-            />
-
-            <polygon
-              points="596,0 612,0 705,570 665,570"
-              fill="url(#rayGradMain)"
-              opacity="0.8"
-            />
-            <polygon
-              points="600,0 620,0 795,560 750,560"
-              fill="url(#rayGradMain)"
-              opacity="0.7"
-            />
-            <polygon
-              points="605,0 630,0 910,550 860,550"
-              fill="url(#rayGradSide)"
-              opacity="0.6"
-            />
-            <polygon
-              points="610,0 640,0 1030,550 970,550"
-              fill="url(#rayGradSide)"
-              opacity="0.45"
-            />
-          </g>
-
-          <!-- High-intensity Backlight Hotspot behind navbar -->
-          <ellipse
-            cx="600"
-            cy="35"
-            rx="400"
-            ry="70"
-            fill="url(#navGlowCore)"
-            filter="url(#tightGlow)"
-            opacity="0.95"
-          />
-          <ellipse
-            cx="600"
-            cy="25"
-            rx="280"
-            ry="38"
-            fill="#ffde6a"
-            filter="url(#tightGlow)"
-            opacity="0.5"
-          />
-        </svg>
-      </div>
+      <!-- Navbar Mesh Grid & Glow -->
+      <div class="navbar-spotlight" aria-hidden="true"></div>
 
       <header class="site-header">
         <nav
@@ -221,14 +45,14 @@
             </p>
           </a>
           <ul class="nav-links" id="main-menu">
-            <li><a class="nav-link active" href="#home">الرئيسية</a></li>
-            <li><a class="nav-link" href="about.html">من نحن</a></li>
-            <li><a href="services.html" class="nav-link"> الخدمات</a></li>
-            <li><a class="nav-link" href="#packages">الباقات</a></li>
-            <li><a class="nav-link" href="#why">آلية العمل</a></li>
-            <li><a class="nav-link" href="#work">المخرجات</a></li>
-            <li><a class="nav-link" href="#sectors">القطاعات</a></li>
-            <li><a class="nav-link" href="#contact">اتصل بنا</a></li>
+            <li><a class="nav-link active" href="index.html">الرئيسية</a></li>
+            <li><a class="nav-link"        href="about.html">من نحن</a></li>
+            <li><a class="nav-link"        href="services.html">الخدمات</a></li>
+            <li><a class="nav-link"        href="packages.html">الباقات</a></li>
+            <li><a class="nav-link"        href="process.html">آلية العمل</a></li>
+            <li><a class="nav-link"        href="work.html">المخرجات</a></li>
+            <li><a class="nav-link"        href="sectors.html">القطاعات</a></li>
+            <li><a class="nav-link"        href="contact.html">اتصل بنا</a></li>
           </ul>
           <button
             class="menu-button"
@@ -238,7 +62,7 @@
           >
             ☰
           </button>
-          <a class="quote-button" href="#contact">اطلب عرض</a>
+          <a class="quote-button" href="contact.html">اطلب عرض</a>
         </nav>
       </header>
 
@@ -344,7 +168,7 @@
                   كأصول جاهزة للاستخدام عبر كل القنوات.
                 </p>
               </div>
-              <a class="pill-button" href="#contact">
+              <a class="pill-button" href="about.html">
                 <span class="button-icon"
                   ><img src="./assets-design/icons/chevron-outline.svg" alt=""
                 /></span>
@@ -498,17 +322,18 @@
                 بصرية تترك أثرًا لا يُنسى
               </h2>
               <p class="section-lead">
-                AZ لأننا لا نقدم مجرد خدمات إنتاج، بل نصنع تجارب إبداعية متكاملة
+                لأننا لا نقدم مجرد خدمات إنتاج، بل نصنع تجارب إبداعية متكاملة
                 تجمع بين الفكرة المبتكرة، والتنفيذ الاحترافي، والجودة التي تعكس
-                هوية علامتك وتمنحها حضورًا لا يُنسى.
+                هوية علامتك وتمنحها حضورًا لا يُنسى AZ
               </p>
             </div>
             <div class="reason-grid">
               <article class="reason-card">
-                <p class="reason-number">03</p>
-                <h3 class="reason-title">معدات حديثة</h3>
+                <p class="reason-number">01</p>
+                <h3 class="reason-title">خبرة عالمية</h3>
                 <p class="reason-text">
-                  أحدث معدات التصوير والإنتاج لضمان أعلى جودة
+                  فهم عميق للسوق السعودي والعالمي والثقافة المحلية مع معايير
+                  عالمية
                 </p>
               </article>
               <article class="reason-card">
@@ -520,18 +345,17 @@
                 </p>
               </article>
               <article class="reason-card">
-                <p class="reason-number">01</p>
-                <h3 class="reason-title">خبرة عالمية</h3>
+                <p class="reason-number">03</p>
+                <h3 class="reason-title">معدات حديثة</h3>
                 <p class="reason-text">
-                  فهم عميق للسوق السعودي والعالمي والثقافة المحلية مع معايير
-                  عالمية
+                  أحدث معدات التصوير والإنتاج لضمان أعلى جودة
                 </p>
               </article>
               <article class="reason-card">
-                <p class="reason-number">06</p>
-                <h3 class="reason-title">دعم شامل</h3>
+                <p class="reason-number">04</p>
+                <h3 class="reason-title">إبداع مخصص</h3>
                 <p class="reason-text">
-                  مرافقة كاملة من الفكرة الأولى حتى التسليم النهائي وما بعده
+                  حلول إبداعية فريدة تصميم خصيصًا لاحتياجات كل عميل
                 </p>
               </article>
               <article class="reason-card">
@@ -542,47 +366,46 @@
                 </p>
               </article>
               <article class="reason-card">
-                <p class="reason-number">04</p>
-                <h3 class="reason-title">إبداع مخصص</h3>
+                <p class="reason-number">06</p>
+                <h3 class="reason-title">دعم شامل</h3>
                 <p class="reason-text">
-                  حلول إبداعية فريدة تصميم خصيصًا لاحتياجات كل عميل
+                  مرافقة كاملة من الفكرة الأولى حتى التسليم النهائي وما بعده
                 </p>
               </article>
             </div>
             <div class="system-strip">
               <h2 class="system-title">
-                ليس <span class="accent">AZ Studio</span>“تنفيذ فقط”… بل منظومة
-                قابلة للقياس
+                ليس <span class="accent">AZ Studio</span> “تنفيذ فقط”... بل منظومة قابلة للقياس
               </h2>
               <div class="system-grid">
                 <article class="system-card">
-                  <div class="system-copy">
-                    <h3>حوكمة واضحة</h3>
-                    <p>نطاق عمل محدد، اعتماد قبل التنفيذ، ومخرجات موثّقة</p>
+                  <div class="system-icon">
+                    <img src="./assets-design/icons/icon-quality.svg" alt="" />
                   </div>
+                  <div class="system-copy">
+                    <h3>جودة منافسة للأسواق الدولية</h3>
+                    <p>معايير تصوير وتحرير احترافية على المستوى العالمي</p>
+                  </div>
+                </article>
+                <article class="system-card">
+                  <div class="system-icon">
+                    <img src="./assets-design/icons/icon-sla.svg" alt="" />
+                  </div>
+                  <div class="system-copy">
+                    <h3>زمن استجابة SLA</h3>
+                    <p>رد خلال 24 ساعة عمل وجدولة دقيقة تضمن عدم التأخر</p>
+                  </div>
+                </article>
+                <article class="system-card">
                   <div class="system-icon">
                     <img
                       src="./assets-design/icons/icon-governance.svg"
                       alt=""
                     />
                   </div>
-                </article>
-                <article class="system-card">
                   <div class="system-copy">
-                    <h3>SLA وزمن استجابة</h3>
-                    <p>رد خلال 24 ساعة عمل وجدولة دقيقة تضمن عدم التأخر</p>
-                  </div>
-                  <div class="system-icon">
-                    <img src="./assets-design/icons/icon-sla.svg" alt="" />
-                  </div>
-                </article>
-                <article class="system-card">
-                  <div class="system-copy">
-                    <h3>جودة منافسة للأسواق الدولية</h3>
-                    <p>معايير تصوير وتحرير احترافية على المستوى العالمي</p>
-                  </div>
-                  <div class="system-icon">
-                    <img src="./assets-design/icons/icon-quality.svg" alt="" />
+                    <h3>حوكمة واضحة</h3>
+                    <p>نطاق عمل محدد، اعتماد قبل التنفيذ، ومخرجات موثّقة</p>
                   </div>
                 </article>
               </div>
@@ -593,16 +416,10 @@
         <section class="services-section" id="services">
           <div class="content-wrap">
             <div class="section-header-split">
-              <a class="pill-button is-white" href="#services">
-                <span class="button-icon"
-                  ><img src="./assets-design/icons/chevron-dark.svg" alt=""
-                /></span>
-                عرض كل الخدمات
-              </a>
               <div class="text-block">
                 <span class="section-badge">خدمتنا</span>
                 <h2 class="section-title">
-                  ما تقدمه لك شركة <span class="accent">AZ Studio</span> من
+                  ما تقدمه لك <span class="accent">شركة AZ Studio</span> من
                   خدماتنا الاستراتيجية
                 </h2>
                 <p class="section-lead">
@@ -611,14 +428,86 @@
                   وإنتاجية تعزز حضور علامتك
                 </p>
               </div>
+              <a class="pill-button is-white" href="services.html">
+                <span>عرض كل الخدمات</span>
+                <span class="button-icon"
+                  ><img src="./assets-design/icons/chevron-dark.svg" alt=""
+                /></span>
+              </a>
             </div>
             <div class="service-grid">
+              <article class="service-card">
+                <div class="service-top">
+                  <p class="service-number">01</p>
+                  <div class="service-icon">
+                    <span class="service-icon-box"
+                      ><img src="./assets-design/icons/service-01.svg?v=2" alt=""
+                    /></span>
+                  </div>
+                </div>
+                <h3>إنتاج فيديو مؤسسي وإعلاني</h3>
+                <p>
+                  إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم
+                  أهدافك الاستراتيجية
+                </p>
+                <ul class="feature-list">
+                  <li>
+                    أفلام مؤسسية
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                  <li>
+                    حملات TVCs
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                  <li>
+                    وثائقيات
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                </ul>
+                <a class="service-link" href="service-detail.html"
+                  ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                  زيارة الخدمة</a
+                >
+              </article>
+              <article class="service-card">
+                <div class="service-top">
+                  <p class="service-number">02</p>
+                  <div class="service-icon">
+                    <span class="service-icon-box"
+                      ><img src="./assets-design/icons/service-02.svg?v=2" alt=""
+                    /></span>
+                  </div>
+                </div>
+                <h3>موشن جرافيك وأنظمة حركة للهوية</h3>
+                <p>
+                  تصوير منتجات وبورتريه تنفيذي وتغطيات فعاليات بجودة تفاصيل عالية
+                  ومعالجة احترافية.
+                </p>
+                <ul class="feature-list">
+                  <li>
+                    منتجات
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                  <li>
+                    Headshots
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                  <li>
+                    فعاليات
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                </ul>
+                <a class="service-link" href="service-detail.html"
+                  ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                  زيارة الخدمة</a
+                >
+              </article>
               <article class="service-card">
                 <div class="service-top">
                   <p class="service-number">03</p>
                   <div class="service-icon">
                     <span class="service-icon-box"
-                      ><img src="./assets-design/icons/service-03.svg" alt=""
+                      ><img src="./assets-design/icons/service-03.svg?v=2" alt=""
                     /></span>
                   </div>
                 </div>
@@ -641,139 +530,7 @@
                     <img src="./assets-design/icons/check-small.svg" alt="" />
                   </li>
                 </ul>
-                <a class="service-link" href="#contact"
-                  ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
-                  زيارة الخدمة</a
-                >
-              </article>
-              <article class="service-card">
-                <div class="service-top">
-                  <p class="service-number">02</p>
-                  <div class="service-icon">
-                    <span class="service-icon-box"
-                      ><img src="./assets-design/icons/service-02.svg" alt=""
-                    /></span>
-                  </div>
-                </div>
-                <h3>موشن جرافيك وأنظمة حركة للهوية</h3>
-                <p>
-                  تصوير منتجات وبورتريه تنفيذي وتغطيات فعاليات بجودة تفاصيل
-                  عالية ومعالجة احترافية.
-                </p>
-                <ul class="feature-list">
-                  <li>
-                    منتجات
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                  <li>
-                    Headshots
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                  <li>
-                    فعاليات
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                </ul>
-                <a class="service-link" href="#contact"
-                  ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
-                  زيارة الخدمة</a
-                >
-              </article>
-              <article class="service-card">
-                <div class="service-top">
-                  <p class="service-number">01</p>
-                  <div class="service-icon">
-                    <span class="service-icon-box"
-                      ><img src="./assets-design/icons/service-01.svg" alt=""
-                    /></span>
-                  </div>
-                </div>
-                <h3>إنتاج فيديو مؤسسي وإعلاني</h3>
-                <p>
-                  إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم
-                  أهدافك الاستراتجية
-                </p>
-                <ul class="feature-list">
-                  <li>
-                    أفلام مؤسسية
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                  <li>
-                    TVCs وحملات
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                  <li>
-                    وثائقيات
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                </ul>
-                <a class="service-link" href="#contact"
-                  ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
-                  زيارة الخدمة</a
-                >
-              </article>
-              <article class="service-card">
-                <div class="service-top">
-                  <p class="service-number">06</p>
-                  <div class="service-icon">
-                    <span class="service-icon-box"
-                      ><img src="./assets-design/icons/service-06.svg" alt=""
-                    /></span>
-                  </div>
-                </div>
-                <h3>حلول استوديو وتجهيزات تصوير</h3>
-                <p>
-                  استديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة
-                  للمحترفين
-                </p>
-                <ul class="feature-list">
-                  <li>
-                    دخول ذاتي
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                  <li>
-                    كروما وإضاءة
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                  <li>
-                    إنترنت فايبر
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                </ul>
-                <a class="service-link" href="#contact"
-                  ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
-                  زيارة الخدمة</a
-                >
-              </article>
-              <article class="service-card">
-                <div class="service-top">
-                  <p class="service-number">05</p>
-                  <div class="service-icon">
-                    <span class="service-icon-box"
-                      ><img src="./assets-design/icons/service-05.svg" alt=""
-                    /></span>
-                  </div>
-                </div>
-                <h3>حلول استوديو وتجهيزات تصوير</h3>
-                <p>
-                  استديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة
-                  للمحترفين
-                </p>
-                <ul class="feature-list">
-                  <li>
-                    دخول ذاتي
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                  <li>
-                    كروما وإضاءة
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                  <li>
-                    إنترنت فايبر
-                    <img src="./assets-design/icons/check-small.svg" alt="" />
-                  </li>
-                </ul>
-                <a class="service-link" href="#contact"
+                <a class="service-link" href="service-detail.html"
                   ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
                   زيارة الخدمة</a
                 >
@@ -783,7 +540,7 @@
                   <p class="service-number">04</p>
                   <div class="service-icon">
                     <span class="service-icon-box"
-                      ><img src="./assets-design/icons/service-04.svg" alt=""
+                      ><img src="./assets-design/icons/service-04.svg?v=2" alt=""
                     /></span>
                   </div>
                 </div>
@@ -806,7 +563,73 @@
                     <img src="./assets-design/icons/check-small.svg" alt="" />
                   </li>
                 </ul>
-                <a class="service-link" href="#contact"
+                <a class="service-link" href="service-detail.html"
+                  ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                  زيارة الخدمة</a
+                >
+              </article>
+              <article class="service-card">
+                <div class="service-top">
+                  <p class="service-number">05</p>
+                  <div class="service-icon">
+                    <span class="service-icon-box"
+                      ><img src="./assets-design/icons/service-05.svg?v=2" alt=""
+                    /></span>
+                  </div>
+                </div>
+                <h3>حلول استوديو وتجهيزات تصوير</h3>
+                <p>
+                  استديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة
+                  للمحترفين
+                </p>
+                <ul class="feature-list">
+                  <li>
+                    دخول ذاتي
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                  <li>
+                    كروما وإضاءة
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                  <li>
+                    إنترنت فايبر
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                </ul>
+                <a class="service-link" href="service-detail.html"
+                  ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                  زيارة الخدمة</a
+                >
+              </article>
+              <article class="service-card">
+                <div class="service-top">
+                  <p class="service-number">06</p>
+                  <div class="service-icon">
+                    <span class="service-icon-box"
+                      ><img src="./assets-design/icons/service-06.svg?v=2" alt=""
+                    /></span>
+                  </div>
+                </div>
+                <h3>حلول استوديو وتجهيزات تصوير</h3>
+                <p>
+                  استديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة
+                  للمحترفين
+                </p>
+                <ul class="feature-list">
+                  <li>
+                    دخول ذاتي
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                  <li>
+                    كروما وإضاءة
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                  <li>
+                    إنترنت فايبر
+                    <img src="./assets-design/icons/check-small.svg" alt="" />
+                  </li>
+                </ul>
+                <a class="service-link" href="service-detail.html"
                   ><img src="./assets-design/icons/arrow-gold.svg" alt="" />
                   زيارة الخدمة</a
                 >
@@ -816,21 +639,45 @@
         </section>
 
         <section class="packages-section content-wrap" id="packages">
-          <div class="packages-header">
-            <div>
+          <div class="section-header-split packages-split-header">
+            <div class="text-block">
+              <span class="section-badge">الباقات</span>
+              <h2 class="section-title">
+                باقات <span class="accent">AZ Studio</span> تمنح علامتك حضورًا
+                رقميًا <span class="accent">منظمًا ومؤثرًا</span>
+              </h2>
+              <p class="section-lead">
+                باقات السوشيال ميديا التي تجمع بين التخطيط الإبداعي وإدارة
+                المحتوى باحترافية، لضمان تواصل مستمر
+              </p>
+            </div>
+            <div class="package-tabs-wrapper">
               <div class="package-tabs nav nav-pills" role="tablist">
                 <button
-                  class="package-tab nav-link"
-                  id="packages-audio-tab"
+                  class="package-tab nav-link active"
+                  id="packages-social-tab"
                   type="button"
                   role="tab"
                   data-bs-toggle="pill"
-                  data-bs-target="#packages-audio"
-                  aria-controls="packages-audio"
-                  aria-selected="false"
-                  data-package="audio"
+                  data-bs-target="#packages-social"
+                  aria-controls="packages-social"
+                  aria-selected="true"
+                  data-package="social"
                 >
-                  استوديو الصوت
+                  السوشيال ميديا
+                </button>
+                <button
+                  class="package-tab nav-link"
+                  id="packages-studio-tab"
+                  type="button"
+                  role="tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#packages-studio"
+                  aria-controls="packages-studio"
+                  aria-selected="false"
+                  data-package="studio"
+                >
+                  الاستوديو والإنتاج
                 </button>
                 <button
                   class="package-tab nav-link"
@@ -847,53 +694,242 @@
                 </button>
                 <button
                   class="package-tab nav-link"
-                  id="packages-studio-tab"
+                  id="packages-audio-tab"
                   type="button"
                   role="tab"
                   data-bs-toggle="pill"
-                  data-bs-target="#packages-studio"
-                  aria-controls="packages-studio"
+                  data-bs-target="#packages-audio"
+                  aria-controls="packages-audio"
                   aria-selected="false"
-                  data-package="studio"
+                  data-package="audio"
                 >
-                  الاستوديو والإنتاج
-                </button>
-                <button
-                  class="package-tab nav-link active"
-                  id="packages-social-tab"
-                  type="button"
-                  role="tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#packages-social"
-                  aria-controls="packages-social"
-                  aria-selected="true"
-                  data-package="social"
-                >
-                  السوشيال ميديا
+                  استوديو الصوت
                 </button>
               </div>
-              <div class="tab-glow">
-                <img src="./assets-design/icons/package-glow.svg" alt="" />
-              </div>
-            </div>
-            <div class="packages-intro">
-              <span class="section-badge">الباقات</span>
-              <h2 class="section-title">
-                باقات <span class="accent">AZ Studio</span> تمنح علامتك حضورًا
-                رقميًا <span class="accent">منظمًا ومؤثرًا</span>
-              </h2>
-              <p class="section-lead">
-                باقات السوشيال ميديا التي تجمع بين التخطيط الإبداعي وإدارة
-                المحتوى باحترافية، لضمان تواصل مستمر
-              </p>
             </div>
           </div>
-          <div class="tab-content package-tab-content">
+          <div class="tab-content package-tab-content mt-5">
+            <div
+              class="tab-pane fade show active"
+              id="packages-social"
+              role="tabpanel"
+              aria-labelledby="packages-social-tab"
+              tabindex="0"
+            >
+              <div class="pricing-grid">
+                <!-- Card 1: الإقتصادية (Right in RTL) -->
+                <article class="pricing-card">
+                  <div>
+                    <div class="pricing-card-top">
+                      <h3>الإقتصادية</h3>
+                      <span class="save-badge">وفر حتى 10% شهرياً</span>
+                    </div>
+                    <p class="pricing-copy">
+                      مناسبة للأعمال الصغيرة والمتوسطة اللي محتاجة "سوشيال تقليدي" بجودة ثابتة بدون تصوير
+                    </p>
+                    <div class="price-row">
+                      <span class="amount">4000.00</span>
+                      <span class="currency">﷼</span>
+                      <span class="period">/ شهرياً</span>
+                    </div>
+                  </div>
+                  <ul class="include-list">
+                    <li>
+                      <span>إدارة المحتوى على المنصات</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>8 منشورات ستاتيك</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>ريلز ( موشن بسيط أو مونتاج خامات يرسلها العميل )</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>خطة محتوى مختصرة + تقرير أداء مبسط + توصيات</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>قوالب تصميم ثابتة لتوحيد الهوية</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>التعديلات : 2 للتصميم / 1 للفيديو</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                  </ul>
+                  <a class="gold-button w-100 text-center text-decoration-none" href="package-detail.html">اشترك الآن</a>
+                </article>
+
+                <!-- Card 2: الأساسية (Middle in RTL) -->
+                <article class="pricing-card is-featured">
+                  <div>
+                    <div class="pricing-card-top">
+                      <h3 class="gold-text">الأساسية</h3>
+                      <span class="save-badge">وفر حتى 20% شهرياً</span>
+                    </div>
+                    <p class="pricing-copy">
+                      مناسبة للشركات التي تسعى إلى بناء حضور قوي ومتميز، مع هوية بصرية ثابتة وجودة احترافية تعكس قيمها وتعزز تواجدها في السوق بشكل منتظم ومستدام.
+                    </p>
+                    <div class="price-row">
+                      <span class="amount">8000.00</span>
+                      <span class="currency">﷼</span>
+                      <span class="period">/ شهرياً</span>
+                    </div>
+                  </div>
+                  <ul class="include-list">
+                    <li>
+                      <span>استراتيجية + تقويم محتوى شهري</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>2 منشور ستاتيك</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>4 ريلز ( موشن جرافيك أو مونتاج خامات يرسلها العميل )</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>كتابة محتوى + تقرير شهري + توصيات</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>إجتماع شهري</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>التعديلات: 2 للتصميم / 1 للفيديو</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                  </ul>
+                  <a class="gold-button w-100 text-center text-decoration-none" href="package-detail.html">اشترك الآن</a>
+                </article>
+
+                <!-- Card 3: النمو (Left in RTL) -->
+                <article class="pricing-card">
+                  <div>
+                    <div class="pricing-card-top">
+                      <h3>النمو</h3>
+                      <span class="save-badge">وفر حتى 30% شهرياً</span>
+                    </div>
+                    <p class="pricing-copy">
+                      نقدم لك تصويرًا فعليًا احترافيًا يعكس هوية علامتك التجارية بشكل واقعي ومؤثر، إلى جانب إدارة تفاعل احترافية مع جمهورك لضمان التواصل المستمر
+                    </p>
+                    <div class="price-row">
+                      <span class="amount">15000.00</span>
+                      <span class="currency">﷼</span>
+                      <span class="period">/ شهرياً</span>
+                    </div>
+                  </div>
+                  <ul class="include-list">
+                    <li>
+                      <span>منشور ستاتيك</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>8 ريلز ( موشن جرافيك أو مونتاج )</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>جلسة تصوير ( 4 ساعات )</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>إدارة تفاعل 5 أيام كل أسبوع ( بحد أقصى 60 رد يوميا )</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>إجتماعين شهريا</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                    <li>
+                      <span>التعديلات: 2 للتصميم / 1 للفيديو</span>
+                      <span class="check-circle"
+                        ><img
+                          src="./assets-design/icons/check-small.svg"
+                          alt=""
+                      /></span>
+                    </li>
+                  </ul>
+                  <a class="gold-button w-100 text-center text-decoration-none" href="package-detail.html">اشترك الآن</a>
+                </article>
+              </div>
+            </div>
             <div
               class="tab-pane fade package-tab-pane"
-              id="packages-audio"
+              id="packages-studio"
               role="tabpanel"
-              aria-labelledby="packages-audio-tab"
+              aria-labelledby="packages-studio-tab"
               tabindex="0"
             ></div>
             <div
@@ -905,238 +941,16 @@
             ></div>
             <div
               class="tab-pane fade package-tab-pane"
-              id="packages-studio"
+              id="packages-audio"
               role="tabpanel"
-              aria-labelledby="packages-studio-tab"
+              aria-labelledby="packages-audio-tab"
               tabindex="0"
             ></div>
-            <div
-              class="tab-pane fade show active"
-              id="packages-social"
-              role="tabpanel"
-              aria-labelledby="packages-social-tab"
-              tabindex="0"
-            >
-              <div class="pricing-grid">
-                <article class="pricing-card">
-                  <div>
-                    <div class="pricing-card-top">
-                      <span class="save-badge">وفر حتي ٢٠% شهريا</span>
-                      <h3>النمـو</h3>
-                    </div>
-                    <p class="pricing-copy">
-                      نقدّم لك تصويرًا فعليًا احترافيًا يعكس هوية علامتك
-                      التجارية بشكل واقعي ومؤثر، إلى جانب إدارة تفاعل احترافية
-                      مع جمهورك لضمان التواصل المستمر
-                    </p>
-                    <div class="price-row">
-                      <span class="period">/ شهريا</span>
-                      <img src="./assets-design/icons/riyal.svg" alt="" />
-                      <span class="amount">15000.00</span>
-                    </div>
-                  </div>
-                  <ul class="include-list">
-                    <li>
-                      ٠ منشور ستاتيك
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      ٨ ريلز ( موشن جرافيك أو مونتاج )
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      جلسة تصوير ( ٤ ساعات )
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      إدارة تفاعل ٥ أيام كل أسبوع ( بحد أقصى ٦٠ رد يوميا )
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      إجتماعين شهريا
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      التعديلات: ٢ للتصميم / ١ للفيديو
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                  </ul>
-                  <button class="gold-button" type="button">اشترك الآن</button>
-                </article>
-                <article class="pricing-card is-featured">
-                  <div>
-                    <div class="pricing-card-top">
-                      <span class="save-badge">وفر حتي ٢٠% شهريا</span>
-                      <h3>الأساسية</h3>
-                    </div>
-                    <p class="pricing-copy">
-                      مناسبة للشركات التي تسعى إلى بناء حضور قوي ومتميز، مع هوية
-                      بصرية ثابتة وجودة احترافية تعكس قيمها وتعزز تواجدها في
-                      السوق بشكل منتظم ومستدام.
-                    </p>
-                    <div class="price-row">
-                      <span class="period">/ شهريا</span>
-                      <img src="./assets-design/icons/riyal-alt.svg" alt="" />
-                      <span class="amount">8000.00</span>
-                    </div>
-                  </div>
-                  <ul class="include-list">
-                    <li>
-                      استراتيجية + تقويم محتوى شهري
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      ٢ منشور ستاتيك
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      ٤ ريلز ( موشن جرافيك أو مونتاج خامات يرسلها العميل )
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      كتابة محتوى + تقرير شهري + توصيات
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      إجتماع شهري
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      التعديلات: ٢ للتصميم / ١ للفيديو
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                  </ul>
-                  <button class="gold-button" type="button">اشترك الآن</button>
-                </article>
-                <article class="pricing-card">
-                  <div>
-                    <div class="pricing-card-top">
-                      <span class="save-badge">وفر حتي ٢٠% شهريا</span>
-                      <h3>الإقتصادية</h3>
-                    </div>
-                    <p class="pricing-copy">
-                      مناسبة لـلأعمال الصغيرة والمتوسطة اللي محتاجة “سوشيال
-                      تقليدي” بجودة ثابتة بدون تصوير
-                    </p>
-                    <div class="price-row">
-                      <span class="period">/ شهريا</span>
-                      <img src="./assets-design/icons/riyal.svg" alt="" />
-                      <span class="amount">4000.00</span>
-                    </div>
-                  </div>
-                  <ul class="include-list">
-                    <li>
-                      إدارة المحتوى على المنصات
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      ٨ منشورات ستاتيك
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      ريلز ( موشن بسيط أو مونتاج خامات يرسلها العميل )
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      خطة محتوى مختصرة + تقرير أداء مبسط + توصيات
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      قوالب تصميم ثابتة لتوحيد الهوية
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                    <li>
-                      التعديلات : ٢ للتصميم / ١ للفيديو
-                      <span class="check-circle"
-                        ><img
-                          src="./assets-design/icons/check-small.svg"
-                          alt=""
-                      /></span>
-                    </li>
-                  </ul>
-                  <button class="gold-button" type="button">اشترك الآن</button>
-                </article>
-              </div>
-            </div>
           </div>
         </section>
 
-        <section class="work-section" id="work">
+        <section class="work-section content-wrap" id="work">
           <div class="section-header-split">
-            <a class="pill-button is-white" href="#work">
-              <span class="button-icon"
-                ><img src="./assets-design/icons/chevron-dark.svg" alt=""
-              /></span>
-              عرض كل الاعمال
-            </a>
             <div class="text-block">
               <span class="section-badge">مخرجاتنا</span>
               <h2 class="section-title">
@@ -1149,64 +963,43 @@
                 إلى إنجازات ملموسة، ونصنع نتائج تعكس قوة الرؤية وروعة التنفيذ.
               </p>
             </div>
+            <a class="pill-button is-white" href="work.html">
+              <span>عرض كل الاعمال</span>
+              <span class="button-icon"
+                ><img src="./assets-design/icons/chevron-dark.svg" alt=""
+              /></span>
+            </a>
           </div>
           <div class="work-grid">
             <article class="work-card">
-              <p class="sector-label">قطاع الضيافة</p>
-              <h3>إدارة مؤتمر دولي</h3>
+              <p class="sector-label">قطاع حكومي</p>
+              <h3>توثيق مشروع وطني ضخم</h3>
               <div class="work-meta">
-                <span
-                  ><strong>التحدي:</strong> إدارة الخدمات اللوجستية لـ 1000+ ضيف
-                  VIP</span
-                >
-                <span
-                  ><strong>الحل:</strong> إدارة فعاليات متكاملة + AV +
-                  بروتوكول</span
-                >
-                <span
-                  ><strong>النتيجة:</strong> تصنيف الحدث كأفضل مؤتمر في القطاع
-                  لعام 2025</span
-                >
+                <p><strong>التحدي:</strong> إبراز ضخامة الإنجاز في وقت قياسي</p>
+                <p><strong>الحل:</strong> إنتاج مرئي + تصوير جوي + حملة توثيقية.</p>
+                <p><strong>النتيجة:</strong> زيادة الحضور الإعلامي بنسبة 80% ورضا تام من الجهة.</p>
               </div>
-              <button class="gold-button" type="button">عرض التفاصيل</button>
+              <a class="gold-button w-100 text-center text-decoration-none" href="work.html">عرض التفاصيل</a>
             </article>
             <article class="work-card">
               <p class="sector-label">قطاع العقارات</p>
               <h3>إطلاق هوية بصرية متميزة</h3>
               <div class="work-meta">
-                <span
-                  ><strong>التحدي:</strong> خلق انطباع أولي قوي
-                  للمستثمرين.</span
-                >
-                <span
-                  ><strong>الحل:</strong> إنتاج فيديو 3D + مطبوعات فاخرة + هدايا
-                  مؤسسية</span
-                >
-                <span
-                  ><strong>النتيجة:</strong> نجاح إغلاق 90% من مبيعات المرحلة
-                  الأولى.</span
-                >
+                <p><strong>التحدي:</strong> خلق انطباع أولي قوي للمستثمرين.</p>
+                <p><strong>الحل:</strong> إنتاج فيديو 3D + مطبوعات فاخرة + هدايا مؤسسية</p>
+                <p><strong>النتيجة:</strong> نجاح إغلاق 90% من مبيعات المرحلة الأولى.</p>
               </div>
-              <button class="gold-button" type="button">عرض التفاصيل</button>
+              <a class="gold-button w-100 text-center text-decoration-none" href="work.html">عرض التفاصيل</a>
             </article>
             <article class="work-card">
-              <p class="sector-label">قطاع حكومي</p>
-              <h3>توثيق مشروع وطني ضخم</h3>
+              <p class="sector-label">قطاع الضيافة</p>
+              <h3>إدارة مؤتمر دولي</h3>
               <div class="work-meta">
-                <span
-                  ><strong>التحدي:</strong> إبراز ضخامة الإنجاز في وقت
-                  قياسي.</span
-                >
-                <span
-                  ><strong>الحل:</strong> إنتاج مرئي + تصوير جوي + حملة
-                  توثيقية.</span
-                >
-                <span
-                  ><strong>النتيجة:</strong> زيادة الحضور الإعلامي بنسبة 80%
-                  ورضا تام من الجهة.</span
-                >
+                <p><strong>التحدي:</strong> إدارة الخدمات اللوجستية لـ 1000+ ضيف VIP</p>
+                <p><strong>الحل:</strong> إدارة فعاليات متكاملة + AV + بروتوكول</p>
+                <p><strong>النتيجة:</strong> تصنيف الحدث كأفضل مؤتمر في القطاع لعام 2025</p>
               </div>
-              <button class="gold-button" type="button">عرض التفاصيل</button>
+              <a class="gold-button w-100 text-center text-decoration-none" href="work.html">عرض التفاصيل</a>
             </article>
           </div>
         </section>
@@ -1226,40 +1019,10 @@
           </div>
           <div class="sector-grid">
             <article class="sector-card">
-              <div class="service-top">
-                <p class="service-number">03</p>
-                <div class="service-icon">
-                  <span class="service-icon-box"
-                    ><img src="./assets-design/icons/sector-03.svg" alt=""
-                  /></span>
-                </div>
-              </div>
-              <h3>العقارات</h3>
-              <p>
-                إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم أهدافك
-                الاستراتجية
-              </p>
-            </article>
-            <article class="sector-card">
-              <div class="service-top">
-                <p class="service-number">02</p>
-                <div class="service-icon">
-                  <span class="service-icon-box"
-                    ><img src="./assets-design/icons/sector-02.svg" alt=""
-                  /></span>
-                </div>
-              </div>
-              <h3>التعليم</h3>
-              <p>
-                إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم أهدافك
-                الاستراتجية
-              </p>
-            </article>
-            <article class="sector-card">
-              <div class="service-top">
-                <p class="service-number">01</p>
-                <div class="service-icon">
-                  <span class="service-icon-box"
+              <div class="sector-top">
+                <p class="sector-number">01</p>
+                <div class="sector-icon">
+                  <span class="sector-icon-box"
                     ><img src="./assets-design/icons/sector-01.svg" alt=""
                   /></span>
                 </div>
@@ -1267,44 +1030,44 @@
               <h3>الحكومي</h3>
               <p>
                 إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم أهدافك
-                الاستراتجية
+                الاستراتيجية
               </p>
             </article>
             <article class="sector-card">
-              <div class="service-top">
-                <p class="service-number">06</p>
-                <div class="service-icon">
-                  <span class="service-icon-box"
-                    ><img src="./assets-design/icons/sector-06.svg" alt=""
+              <div class="sector-top">
+                <p class="sector-number">02</p>
+                <div class="sector-icon">
+                  <span class="sector-icon-box"
+                    ><img src="./assets-design/icons/sector-02.svg" alt=""
                   /></span>
                 </div>
               </div>
-              <h3>الضيافة والسياحة</h3>
+              <h3>التعليم</h3>
               <p>
                 إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم أهدافك
-                الاستراتجية
+                الاستراتيجية
               </p>
             </article>
             <article class="sector-card">
-              <div class="service-top">
-                <p class="service-number">05</p>
-                <div class="service-icon">
-                  <span class="service-icon-box"
-                    ><img src="./assets-design/icons/sector-05.svg" alt=""
+              <div class="sector-top">
+                <p class="sector-number">03</p>
+                <div class="sector-icon">
+                  <span class="sector-icon-box"
+                    ><img src="./assets-design/icons/sector-03.svg" alt=""
                   /></span>
                 </div>
               </div>
-              <h3>الخدمات</h3>
+              <h3>العقارات</h3>
               <p>
                 إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم أهدافك
-                الاستراتجية
+                الاستراتيجية
               </p>
             </article>
             <article class="sector-card">
-              <div class="service-top">
-                <p class="service-number">04</p>
-                <div class="service-icon">
-                  <span class="service-icon-box"
+              <div class="sector-top">
+                <p class="sector-number">04</p>
+                <div class="sector-icon">
+                  <span class="sector-icon-box"
                     ><img src="./assets-design/icons/sector-04.svg" alt=""
                   /></span>
                 </div>
@@ -1312,16 +1075,46 @@
               <h3>الرعاية الصحية</h3>
               <p>
                 إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم أهدافك
-                الاستراتجية
+                الاستراتيجية
+              </p>
+            </article>
+            <article class="sector-card">
+              <div class="sector-top">
+                <p class="sector-number">05</p>
+                <div class="sector-icon">
+                  <span class="sector-icon-box"
+                    ><img src="./assets-design/icons/sector-05.svg" alt=""
+                  /></span>
+                </div>
+              </div>
+              <h3>الخدمات</h3>
+              <p>
+                إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم أهدافك
+                الاستراتيجية
+              </p>
+            </article>
+            <article class="sector-card">
+              <div class="sector-top">
+                <p class="sector-number">06</p>
+                <div class="sector-icon">
+                  <span class="sector-icon-box"
+                    ><img src="./assets-design/icons/sector-06.svg" alt=""
+                  /></span>
+                </div>
+              </div>
+              <h3>الضيافة والسياحة</h3>
+              <p>
+                إنتاج سينمائي ووثائقي يترجم رسالتكم إلى أصل بصري قوي يدعم أهدافك
+                الاستراتيجية
               </p>
             </article>
           </div>
           <div class="center-action">
-            <a class="pill-button is-white" href="#sectors">
+            <a class="pill-button is-white" href="sectors.html">
+              <span>عرض كل القطاعات</span>
               <span class="button-icon"
                 ><img src="./assets-design/icons/chevron-dark.svg" alt=""
               /></span>
-              عرض كل القطاعات
             </a>
           </div>
         </section>
@@ -1330,7 +1123,7 @@
           <div class="faq-header">
             <span class="section-badge">الاسئلة الشائعة</span>
             <h2 class="section-title">
-              أشهر <span class="accent">الاسئلة</span> التي تواجة المستخدمين
+              أشهر <span class="accent">الأسئلة</span> التي تواجه المستخدمين
             </h2>
             <p class="section-lead">
               الأسئلة الشائعة توفر إجابات سريعة وواضحة لأكثر استفسارات العملاء
@@ -1338,11 +1131,33 @@
             </p>
           </div>
           <div class="faq-grid">
+            <div class="newsletter-block">
+              <h3>خلك متابع، ولا يفوتك اي معلومة او شيء مننا</h3>
+              <p>
+                اشترك في النشرة الإخبارية المنتظمة لدينا للحصول على الأخبار
+                والرؤى وإصدارات المنتجات الجديدة والمزيد.
+              </p>
+              <form class="newsletter-form">
+                <div class="newsletter-input-wrapper">
+                  <input
+                    type="email"
+                    placeholder="أدخل عنوان البريد الإلكتروني"
+                    aria-label="البريد الإلكتروني"
+                    required
+                  />
+                  <img class="input-mail-icon" src="./assets-design/icons/mail.svg" alt="" />
+                </div>
+                <button class="subscribe-button" type="submit">اشتراك</button>
+              </form>
+              <p class="newsletter-note">
+                من خلال الاشتراك فإنك توافق على سياسة الخصوصية الخاصة بنا وتوافق
+                على تلقي التحديثات من شركتنا
+              </p>
+            </div>
             <div class="faq-block">
               <h3>الاسئلة الشائعة حول AZ Studio !</h3>
               <p>
-                هل لديك أسئلة حول مجال السيارات ؟ فريقنا جاهز للإجابة! إليك بعض
-                الأسئلة الشائعة
+                هل لديك أسئلة حول مجال السيارات ؟ فريقنا جاهز للإجابة! إليك بعض الأسئلة الشائعة
               </p>
               <div class="accordion">
                 <div class="accordion-item">
@@ -1351,12 +1166,11 @@
                     type="button"
                     aria-expanded="false"
                   >
+                    <span>هذا النص يمكن استبداله بنص بديل يعبر عن المعنى ؟</span>
                     <img src="./assets-design/icons/faq-arrow.svg" alt="" />
-                    هذا النص يمكن استبداله بنص بديل يعبر عن المعني ؟
                   </button>
                   <div class="accordion-content">
-                    نص توضيحي يمكن استبداله بإجابة السؤال كما هو معروض في
-                    التصميم.
+                    نقدم خدمات إنتاج سينمائي وإعلاني، موشن جرافيك، تصوير منتجات وبورتريه، إنتاج بودكاست وهندسة صوتية، وتجهيزات استوديوهات متكاملة بأحدث المعايير العالمية.
                   </div>
                 </div>
                 <div class="accordion-item">
@@ -1365,105 +1179,35 @@
                     type="button"
                     aria-expanded="false"
                   >
+                    <span>هذا النص يمكن استبداله بنص بديل يعبر عن المعنى ؟</span>
                     <img src="./assets-design/icons/faq-arrow.svg" alt="" />
-                    هذا النص يمكن استبداله بنص بديل يعبر عن المعني ؟
                   </button>
                   <div class="accordion-content">
-                    نص توضيحي يمكن استبداله بإجابة السؤال كما هو معروض في
-                    التصميم.
+                    نلتزم باتفاقيات مستوى الخدمة (SLA) محددة مع ردود خلال 24 ساعة عمل، وخطة إنتاج واضحة ومخرجات موثقة في كل مرحلة لضمان التسليم في الوقت المحدد.
                   </div>
                 </div>
               </div>
             </div>
-            <div class="newsletter-block">
-              <h3>خلك متابع، ولا يفوتك اي معلومة او شيء مننا</h3>
-              <p>
-                اشترك في النشرة الإخبارية المنتظمة لدينا للحصول على الأخبار
-                والرؤى وإصدارات المنتجات الجديدة والمزيد.
-              </p>
-              <form class="newsletter-form">
-                <button class="subscribe-button" type="submit">اشترك</button>
-                <input
-                  type="email"
-                  placeholder="أدخل عنوان البريد الإلكتروني"
-                  aria-label="البريد الإلكتروني"
-                />
-              </form>
-              <p class="newsletter-note">
-                من خلال الاشتراك فإنك توافق على سياسة الخصوصية الخاصة بنا وتوافق
-                على تلقي التحديثات من شركتنا
-              </p>
-            </div>
           </div>
 
           <div class="contact-pair">
-            <aside class="info-card">
-              <h3>معلومات الاتصال</h3>
-              <p>
-                AZ Studio شركة سعودية رائدة في مجال الإنتاج السينمائي والمرئي،
-                نعمل على تحويل الأفكار إلى أعمال بصرية مؤثرة تحاكي أعلى المعايير
-                الإبداعية والتقنية. نقدم حلول إنتاج متكاملة تشمل تطوير الفكرة،
-                كتابة المحتوى، التصوير، الإخراج، والمونتاج، لنصنع تجارب بصرية
-                تعكس هوية العلامات التجارية وتترك أثرًا طويل المدى لدى الجمهور.
-                في AZ Studio نؤمن بأن كل مشروع قصة، وكل قصة تستحق أن تُروى بأعلى
-                مستوى من الاحترافية والجودة
-              </p>
-              <div class="contact-row">
-                <div>
-                  <h4>قم بزيارتنا | Visit Us</h4>
-                  <p>King Fahd Road, Riyadh, Saudi Arabia</p>
-                </div>
-                <span class="contact-icon"
-                  ><img src="./assets-design/icons/pin.svg" alt=""
-                /></span>
-              </div>
-              <div class="contact-row">
-                <div>
-                  <h4>اتصل بنا | Call Us</h4>
-                  <p>+966 11 234 5678</p>
-                </div>
-                <span class="contact-icon"
-                  ><img src="./assets-design/icons/phone.svg" alt=""
-                /></span>
-              </div>
-              <div class="contact-row">
-                <div>
-                  <h4>راسلنا | Email Us</h4>
-                  <p>info@appraisal.sa</p>
-                </div>
-                <span class="contact-icon"
-                  ><img src="./assets-design/icons/email.svg" alt=""
-                /></span>
-              </div>
-              <div class="contact-row">
-                <div>
-                  <h4>ساعات العمل | Working Hours</h4>
-                  <p>Sun - Thu: 9:00 AM - 6:00 PM</p>
-                </div>
-                <span class="contact-icon"
-                  ><img src="./assets-design/icons/clock.svg" alt=""
-                /></span>
-              </div>
-              <div class="mosaic" aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span
-                ><span></span><span></span>
-              </div>
-            </aside>
+            <!-- Right Column in RTL: Contact Form -->
             <div class="contact-card">
-              <h3>طلب تواصل معنا</h3>
+              <h3>طلب تواصل معانا</h3>
               <form class="contact-form">
                 <div class="form-row">
+                  <div class="form-field">
+                    <label for="name">الاسم</label>
+                    <input id="name" type="text" placeholder="اسمك الكامل" required />
+                  </div>
                   <div class="form-field">
                     <label for="phone">الهاتف</label>
                     <input
                       id="phone"
                       type="tel"
                       placeholder="+966 5X XXX XXXX"
+                      required
                     />
-                  </div>
-                  <div class="form-field">
-                    <label for="name">الاسم</label>
-                    <input id="name" type="text" placeholder="اسمك الكامل" />
                   </div>
                 </div>
                 <div class="form-field">
@@ -1471,29 +1215,77 @@
                   <input
                     id="email"
                     type="email"
-                    placeholder="بريدك الإلكتروني@example.com"
+                    placeholder="بريدك الإلكتروني (user@example.com)"
+                    required
                   />
                 </div>
                 <div class="form-field">
                   <label for="service">الخدمة</label>
-                  <select id="service">
+                  <select id="service" required>
                     <option value="">اختر الخدمة التي تريدها</option>
-                    <option>إنتاج فيديو</option>
-                    <option>موشن جرافيك</option>
-                    <option>تصوير</option>
-                    <option>بودكاست</option>
+                    <option>إنتاج فيديو مؤسسي وإعلاني</option>
+                    <option>موشن جرافيك وأنظمة حركة</option>
+                    <option>تصوير منتجات / معماري / بورتريه</option>
+                    <option>بودكاست وتسجيل صوتي</option>
+                    <option>حلول استوديو وتجهيزات</option>
+                    <option>إنتاج فعاليات وتغطيات</option>
                   </select>
                 </div>
                 <div class="form-field">
                   <label for="message">الرسالة</label>
                   <textarea
                     id="message"
-                    placeholder="أخبرنا عن احتياجاتك المتعلقة بلتصوير ..."
+                    placeholder="أخبرنا عن احتياجاتك المتعلقة بالتصوير .."
+                    required
                   ></textarea>
                 </div>
                 <button class="submit-button" type="submit">إرسال الطلب</button>
               </form>
             </div>
+
+            <!-- Left Column in RTL: Contact Info Card -->
+            <aside class="info-card">
+              <h3>معلومات الاتصال</h3>
+              <p>
+                شركة سعودية رائدة في مجال الإنتاج السينمائي والمرئي، نعمل على تحويل الأفكار إلى أعمال Studio AZ بصرية مؤثرة تحاكي أعلى المعايير الإبداعية والتقنية. نقدم حلول إنتاج متكاملة تشمل تطوير الفكرة، كتابة المحتوى، التصوير، الإخراج، والمونتاج، لنصنع تجارب بصرية تعكس هوية العلامات التجارية وتترك أثرًا نؤمن بأن كل مشروع قصة، وكل قصة تستحق أن تُروى Studio AZ طويل المدى لدى الجمهور. في بأعلى مستوى من الاحترافية والجودة.
+              </p>
+              <div class="contact-row">
+                <span class="contact-icon"
+                  ><img src="./assets-design/icons/pin.svg" alt=""
+                /></span>
+                <div class="contact-row-text">
+                  <h4>قم بزيارتنا | Visit Us</h4>
+                  <p>King Fahd Road, Riyadh, Saudi Arabia</p>
+                </div>
+              </div>
+              <div class="contact-row">
+                <span class="contact-icon"
+                  ><img src="./assets-design/icons/phone.svg" alt=""
+                /></span>
+                <div class="contact-row-text">
+                  <h4>اتصل بنا | Call Us</h4>
+                  <p dir="ltr">+966 11 234 5678</p>
+                </div>
+              </div>
+              <div class="contact-row">
+                <span class="contact-icon"
+                  ><img src="./assets-design/icons/email.svg" alt=""
+                /></span>
+                <div class="contact-row-text">
+                  <h4>راسلنا | Email Us</h4>
+                  <p>info@appraisal.sa</p>
+                </div>
+              </div>
+              <div class="contact-row">
+                <span class="contact-icon"
+                  ><img src="./assets-design/icons/clock.svg" alt=""
+                /></span>
+                <div class="contact-row-text">
+                  <h4>ساعات العمل | Working Hours</h4>
+                  <p>Sun - Thu: 9:00 AM - 6:00 PM</p>
+                </div>
+              </div>
+            </aside>
           </div>
         </section>
       </main>
@@ -1524,45 +1316,46 @@
             </p>
             <div class="footer-contact-list">
               <a href="mailto:info@azstudio.sa">
-                <span>info@Azstudio.sa</span>
                 <img src="./assets-design/icons/mail.svg" alt="" />
+                <span>info@Azstudio.sa</span>
               </a>
               <a href="tel:+966112345678">
-                <span dir="ltr">+966 11 234 5678</span>
                 <img src="./assets-design/icons/phone.svg" alt="" />
+                <span dir="ltr">+966 11 234 5678</span>
               </a>
               <span>
-                <span>الرياض، المملكة العربية السعودية</span>
                 <img src="./assets-design/icons/pin.svg" alt="" />
+                <span>الرياض، المملكة العربية السعودية</span>
               </span>
             </div>
           </div>
 
           <nav class="footer-column" aria-label="روابط سريعة">
             <h2>روابط سريعة :</h2>
-            <a href="#home">الرئيسية</a>
-            <a href="#about">من نحن</a>
-            <a href="#services">الخدمات</a>
-            <a href="#why">آلية العمل</a>
-            <a href="#work">المخرجات</a>
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="services.html">الخدمات</a>
+            <a href="packages.html">الباقات</a>
+            <a href="process.html">آلية العمل</a>
+            <a href="work.html">المخرجات</a>
+            <a href="sectors.html">القطاعات</a>
           </nav>
 
           <nav class="footer-column" aria-label="الخدمات">
             <h2>الخدمات :</h2>
-            <a href="#services">تصوير منتجات / معماري / بورتريه</a>
-            <a href="#services">أنظمة حركة الهوية</a>
-            <a href="#services">إنتاج فيديو مؤسسي وإعلاني</a>
-            <a href="#services">بودكاست وتسجيل تعليق صوتي</a>
-            <a href="#services">حلول استوديو وتجهيزات تصوير</a>
+            <a href="services.html">تصوير منتجات / معماري / بورتريه</a>
+            <a href="services.html">أنظمة حركة الهوية</a>
+            <a href="services.html">إنتاج فيديو مؤسسي وإعلاني</a>
+            <a href="services.html">بودكاست وتسجيل تعليق صوتي</a>
+            <a href="services.html">حلول استوديو وتجهيزات تصوير</a>
           </nav>
 
           <div class="footer-contact-column">
             <h2>اتصال</h2>
-            <a href="tel:+9665550120" dir="ltr">(409) 555 0120</a>
-            <a href="#contact">WWW.Example.com</a>
-            <a href="#contact">WWW.Example 2.com</a>
-            <a href="#contact">WWW.Example 3.com</a>
-            <p>عمارة ٢٥، حي العليا، الرياض، المملكة العربية السعودية</p>
+            <a href="tel:+966112345678" dir="ltr">+966 11 234 5678</a>
+            <a href="mailto:info@azstudio.sa">info@azstudio.sa</a>
+            <a href="https://azstudio.sa">www.azstudio.sa</a>
+            <p>عمارة ٢٥، طريق الملك فهد، حي العليا، الرياض، المملكة العربية السعودية</p>
           </div>
         </div>
 
@@ -1570,10 +1363,10 @@
           <p>جميع الحقوق محفوظة، © 2025 AZ Studio.</p>
           <div class="footer-social" aria-label="تابعنا">
             <span>تابعنا:</span>
-            <a href="#contact" aria-label="Instagram">◎</a>
-            <a href="#contact" aria-label="LinkedIn">in</a>
-            <a href="#contact" aria-label="Facebook">f</a>
-            <a href="#contact" aria-label="Twitter">♥</a>
+            <a href="contact.html" aria-label="Instagram"><img src="./assets-design/icons/instagram.svg" alt="Instagram" /></a>
+            <a href="contact.html" aria-label="LinkedIn"><img src="./assets-design/icons/linkedin.svg" alt="LinkedIn" /></a>
+            <a href="contact.html" aria-label="Facebook"><img src="./assets-design/icons/facebook.svg" alt="Facebook" /></a>
+            <a href="contact.html" aria-label="Twitter"><img src="./assets-design/icons/twitter.svg" alt="Twitter" /></a>
           </div>
         </div>
       </footer>

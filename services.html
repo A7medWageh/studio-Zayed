@@ -3,321 +3,429 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>الخدمات — AZ Studio</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400&display=swap"
       rel="stylesheet"
     />
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="./css/services.css" />
   </head>
 
   <body>
     <div class="page-shell">
-      <!-- Navbar Spotlight Beam -->
-      <div class="navbar-spotlight" aria-hidden="true">
-        <svg
-          class="spotlight-svg"
-          viewBox="0 0 1200 650"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMin slice"
-        >
-          <defs>
-            <radialGradient id="navGlowCore" cx="50%" cy="5%" r="45%">
-              <stop offset="0%" stop-color="#ffce52" stop-opacity="0.8" />
-              <stop offset="25%" stop-color="#f5a828" stop-opacity="0.55" />
-              <stop offset="55%" stop-color="#d47f15" stop-opacity="0.25" />
-              <stop offset="85%" stop-color="#6e3c04" stop-opacity="0.08" />
-              <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-            </radialGradient>
 
-            <radialGradient id="navGlowWide" cx="50%" cy="0%" r="65%">
-              <stop offset="0%" stop-color="#f5a92a" stop-opacity="0.45" />
-              <stop offset="35%" stop-color="#c97712" stop-opacity="0.22" />
-              <stop offset="65%" stop-color="#5a2f02" stop-opacity="0.06" />
-              <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-            </radialGradient>
+      <!-- ══ Navbar Mesh Grid & Glow ══ -->
+      <div class="navbar-spotlight" aria-hidden="true"></div>
 
-            <linearGradient
-              id="spotConeGrad"
-              x1="50%"
-              y1="0%"
-              x2="50%"
-              y2="100%"
-            >
-              <stop offset="0%" stop-color="#ffd257" stop-opacity="0.7" />
-              <stop offset="15%" stop-color="#f5a623" stop-opacity="0.5" />
-              <stop offset="45%" stop-color="#cc7810" stop-opacity="0.28" />
-              <stop offset="75%" stop-color="#733d02" stop-opacity="0.08" />
-              <stop offset="100%" stop-color="#0c0c0c" stop-opacity="0" />
-            </linearGradient>
-
-            <linearGradient
-              id="rayGradMain"
-              x1="50%"
-              y1="0%"
-              x2="50%"
-              y2="100%"
-            >
-              <stop offset="0%" stop-color="#ffe484" stop-opacity="0.65" />
-              <stop offset="20%" stop-color="#f8b334" stop-opacity="0.45" />
-              <stop offset="50%" stop-color="#d97f14" stop-opacity="0.2" />
-              <stop offset="80%" stop-color="#572e02" stop-opacity="0.04" />
-              <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-            </linearGradient>
-
-            <linearGradient
-              id="rayGradSide"
-              x1="50%"
-              y1="0%"
-              x2="50%"
-              y2="100%"
-            >
-              <stop offset="0%" stop-color="#fdbb3a" stop-opacity="0.45" />
-              <stop offset="25%" stop-color="#e28c1b" stop-opacity="0.28" />
-              <stop offset="60%" stop-color="#804403" stop-opacity="0.08" />
-              <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-            </linearGradient>
-
-            <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="35" result="blur" />
-            </filter>
-            <filter id="coneBlur" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="22" result="blur" />
-            </filter>
-            <filter id="rayBlur" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="12" result="blur" />
-            </filter>
-            <filter id="tightGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="16" result="blur" />
-            </filter>
-          </defs>
-
-          <!-- Wide Ambient Warmth -->
-          <ellipse
-            cx="600"
-            cy="30"
-            rx="560"
-            ry="320"
-            fill="url(#navGlowWide)"
-            filter="url(#softGlow)"
-          />
-
-          <!-- Main Spotlight Cone -->
-          <path
-            d="M 330 0 L 870 0 L 1080 580 L 120 580 Z"
-            fill="url(#spotConeGrad)"
-            filter="url(#coneBlur)"
-            opacity="0.85"
-          />
-
-          <!-- Inner Spotlight Cone -->
-          <path
-            d="M 420 0 L 780 0 L 920 520 L 280 520 Z"
-            fill="url(#spotConeGrad)"
-            filter="url(#coneBlur)"
-            opacity="0.65"
-          />
-
-          <!-- Volumetric God Rays (Downward Radiating Beams) -->
-          <g filter="url(#rayBlur)" style="mix-blend-mode: screen">
-            <polygon
-              points="560,0 590,0 230,550 170,550"
-              fill="url(#rayGradSide)"
-              opacity="0.45"
-            />
-            <polygon
-              points="570,0 595,0 340,550 290,550"
-              fill="url(#rayGradSide)"
-              opacity="0.6"
-            />
-            <polygon
-              points="580,0 600,0 450,560 405,560"
-              fill="url(#rayGradMain)"
-              opacity="0.7"
-            />
-            <polygon
-              points="588,0 604,0 535,570 495,570"
-              fill="url(#rayGradMain)"
-              opacity="0.8"
-            />
-
-            <polygon
-              points="594,0 606,0 618,570 582,570"
-              fill="url(#rayGradMain)"
-              opacity="0.9"
-            />
-
-            <polygon
-              points="596,0 612,0 705,570 665,570"
-              fill="url(#rayGradMain)"
-              opacity="0.8"
-            />
-            <polygon
-              points="600,0 620,0 795,560 750,560"
-              fill="url(#rayGradMain)"
-              opacity="0.7"
-            />
-            <polygon
-              points="605,0 630,0 910,550 860,550"
-              fill="url(#rayGradSide)"
-              opacity="0.6"
-            />
-            <polygon
-              points="610,0 640,0 1030,550 970,550"
-              fill="url(#rayGradSide)"
-              opacity="0.45"
-            />
-          </g>
-
-          <!-- High-intensity Backlight Hotspot behind navbar -->
-          <ellipse
-            cx="600"
-            cy="35"
-            rx="400"
-            ry="70"
-            fill="url(#navGlowCore)"
-            filter="url(#tightGlow)"
-            opacity="0.95"
-          />
-          <ellipse
-            cx="600"
-            cy="25"
-            rx="280"
-            ry="38"
-            fill="#ffde6a"
-            filter="url(#tightGlow)"
-            opacity="0.5"
-          />
-        </svg>
-      </div>
-
+      <!-- ══ Header ══ -->
       <header class="site-header">
-        <nav
-          class="main-navigation"
-          id="main-navigation"
-          aria-label="التنقل الرئيسي"
-        >
-          <a class="brand-logo" href="#home" aria-label="AZ Studio">
+        <nav class="main-navigation" id="main-navigation" aria-label="التنقل الرئيسي">
+          <a class="brand-logo" href="index.html" aria-label="AZ Studio">
             <span class="brand-mark">
-              <img
-                class="logo-a"
-                src="./assets-design/icons/logo-a.svg"
-                alt=""
-              />
-              <img
-                class="logo-z"
-                src="./assets-design/icons/logo-z.svg"
-                alt=""
-              />
+              <img class="logo-a" src="./assets-design/icons/logo-a.svg" alt=""/>
+              <img class="logo-z" src="./assets-design/icons/logo-z.svg" alt=""/>
             </span>
-            <p class="brand-tagline">
-              A U D I O V I S U A L P R O D U C T I O N
-            </p>
+            <p class="brand-tagline">A U D I O V I S U A L P R O D U C T I O N</p>
           </a>
           <ul class="nav-links" id="main-menu">
-            <li><a class="nav-link active" href="#home">الرئيسية</a></li>
-            <li><a class="nav-link" href="about.html">من نحن</a></li>
-            <li><a class="nav-link" href="#services">الخدمات</a></li>
-            <li><a class="nav-link" href="#packages">الباقات</a></li>
-            <li><a class="nav-link" href="#why">آلية العمل</a></li>
-            <li><a class="nav-link" href="#work">المخرجات</a></li>
-            <li><a class="nav-link" href="#sectors">القطاعات</a></li>
-            <li><a class="nav-link" href="#contact">اتصل بنا</a></li>
+            <li><a class="nav-link"        href="index.html">الرئيسية</a></li>
+            <li><a class="nav-link"        href="about.html">من نحن</a></li>
+            <li><a class="nav-link active" href="services.html">الخدمات</a></li>
+            <li><a class="nav-link"        href="packages.html">الباقات</a></li>
+            <li><a class="nav-link"        href="process.html">آلية العمل</a></li>
+            <li><a class="nav-link"        href="work.html">المخرجات</a></li>
+            <li><a class="nav-link"        href="sectors.html">القطاعات</a></li>
+            <li><a class="nav-link"        href="contact.html">اتصل بنا</a></li>
           </ul>
-          <button
-            class="menu-button"
-            type="button"
-            aria-expanded="false"
-            aria-controls="main-menu"
-          >
-            ☰
-          </button>
-          <a class="quote-button" href="#contact">اطلب عرض</a>
+          <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-menu">☰</button>
+          <a class="quote-button" href="contact.html">اطلب عرض</a>
         </nav>
       </header>
 
-      <main>
-        <!-- محتوى صفحة الخدمات هنا -->
+      <!-- ══ Services Page Main ══ -->
+      <main class="services-page-main">
+        <section class="services-hero">
+
+          <!-- Centered Header -->
+          <div class="services-hero-header">
+            <span class="section-badge">الخدمات</span>
+            <h1 class="services-hero-title">
+              نقدّم حلولًا متكاملة مصممة بعناية، تجمع بين <span class="accent">الاحترافية والإبداع</span>، لنحوّل احتياجاتك إلى نتائج ملموسة
+            </h1>
+            <p class="services-hero-lead">
+              نقدم منظومة خدمات متكاملة تبدأ من فهم عميق لاحتياجاتك وأهدافك، مروراً بالتخطيط الاستراتيجي الدقيق، وصولاً إلى التنفيذ الاحترافي والتسليم بأعلى معايير الجودة
+            </p>
+          </div>
+
+          <!-- Sub Header (Right Aligned) -->
+          <div class="services-sub-header">
+            <h2 class="services-sub-title">
+              ما تقدمه لك <span class="accent">شركة AZ Studio</span> من خدماتنا الاستراتيجية
+            </h2>
+            <p class="services-sub-lead">
+              آلية عملنا في AZ Studio ترتكز على فهم رؤيتك بعمق، وتحويلها إلى استراتيجية مدروسة، ثم تنفيذها بإبداع واحترافية عالية لنقدم تجربة متكاملة تصنع فرقاً حقيقياً وتعزز حضور علامتك في السوق
+            </p>
+          </div>
+
+          <!-- 9 Services Cards Grid -->
+          <div class="services-cards-grid">
+
+            <!-- Card 01 -->
+            <article class="service-page-card">
+              <div class="service-card-top">
+                <div class="service-card-icon">
+                  <img src="./assets-design/icons/service-01.svg?v=2" alt="" />
+                </div>
+                <p class="service-card-number">01</p>
+              </div>
+              <h3 class="service-card-title">إنتاج فيديو مؤسسي وإعلاني</h3>
+              <p class="service-card-desc">
+                إنتاج سينمائي وإعلاني يترجم رسالتكم إلى أصل بصري قوي يخدم أهدافك الاستراتيجية
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  أفلام مؤسسية
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  حملات TVCs
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  وثائقيات
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+              </ul>
+              <a class="service-card-link" href="service-detail.html">
+                <img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                زيارة الخدمة
+              </a>
+            </article>
+
+            <!-- Card 02 -->
+            <article class="service-page-card">
+              <div class="service-card-top">
+                <div class="service-card-icon">
+                  <img src="./assets-design/icons/service-02.svg?v=2" alt="" />
+                </div>
+                <p class="service-card-number">02</p>
+              </div>
+              <h3 class="service-card-title">موشن جرافيك وأنظمة حركة للهوية</h3>
+              <p class="service-card-desc">
+                تصوير منتجات وبورتريه تنفيذي وتغطيات فعاليات بجودة تفاصيل عالية ومعالجة احترافية
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  منتجات
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  Headshots
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  فعاليات
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+              </ul>
+              <a class="service-card-link" href="service-detail.html">
+                <img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                زيارة الخدمة
+              </a>
+            </article>
+
+            <!-- Card 03 -->
+            <article class="service-page-card">
+              <div class="service-card-top">
+                <div class="service-card-icon">
+                  <img src="./assets-design/icons/service-03.svg?v=2" alt="" />
+                </div>
+                <p class="service-card-number">03</p>
+              </div>
+              <h3 class="service-card-title">تصوير منتجات/معماري/بورتريه</h3>
+              <p class="service-card-desc">
+                هندسة وإدارة فعاليات ومؤتمرات من A إلى Z: تصميم، لوجستيات، تشغيل، وبروتوكول VIP
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  مؤتمرات ومعارض
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  Activations
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  AV &amp; Production
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+              </ul>
+              <a class="service-card-link" href="service-detail.html">
+                <img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                زيارة الخدمة
+              </a>
+            </article>
+
+            <!-- Card 04 -->
+            <article class="service-page-card">
+              <div class="service-card-top">
+                <div class="service-card-icon">
+                  <img src="./assets-design/icons/service-04.svg?v=2" alt="" />
+                </div>
+                <p class="service-card-number">04</p>
+              </div>
+              <h3 class="service-card-title">بودكاست وتسجيل تعليق صوتي</h3>
+              <p class="service-card-desc">
+                استوديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة للمحترفين
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  دخول ذاتي
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  كروما وإضاءة
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  إنترنت فايبر
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+              </ul>
+              <a class="service-card-link" href="service-detail.html">
+                <img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                زيارة الخدمة
+              </a>
+            </article>
+
+            <!-- Card 05 -->
+            <article class="service-page-card">
+              <div class="service-card-top">
+                <div class="service-card-icon">
+                  <img src="./assets-design/icons/service-05.svg?v=2" alt="" />
+                </div>
+                <p class="service-card-number">05</p>
+              </div>
+              <h3 class="service-card-title">حلول استوديو وتجهيزات تصوير</h3>
+              <p class="service-card-desc">
+                استوديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة للمحترفين
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  دخول ذاتي
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  كروما وإضاءة
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  إنترنت فايبر
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+              </ul>
+              <a class="service-card-link" href="service-detail.html">
+                <img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                زيارة الخدمة
+              </a>
+            </article>
+
+            <!-- Card 06 -->
+            <article class="service-page-card">
+              <div class="service-card-top">
+                <div class="service-card-icon">
+                  <img src="./assets-design/icons/service-06.svg?v=2" alt="" />
+                </div>
+                <p class="service-card-number">06</p>
+              </div>
+              <h3 class="service-card-title">حلول استوديو وتجهيزات تصوير</h3>
+              <p class="service-card-desc">
+                استوديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة للمحترفين
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  دخول ذاتي
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  كروما وإضاءة
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  إنترنت فايبر
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+              </ul>
+              <a class="service-card-link" href="service-detail.html">
+                <img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                زيارة الخدمة
+              </a>
+            </article>
+
+            <!-- Card 07 (Row 3, Card 1 in Figma) -->
+            <article class="service-page-card">
+              <div class="service-card-top">
+                <div class="service-card-icon">
+                  <img src="./assets-design/icons/service-04.svg?v=2" alt="" />
+                </div>
+                <p class="service-card-number">04</p>
+              </div>
+              <h3 class="service-card-title">بودكاست وتسجيل تعليق صوتي</h3>
+              <p class="service-card-desc">
+                استوديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة للمحترفين
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  دخول ذاتي
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  كروما وإضاءة
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  إنترنت فايبر
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+              </ul>
+              <a class="service-card-link" href="service-detail.html">
+                <img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                زيارة الخدمة
+              </a>
+            </article>
+
+            <!-- Card 08 (Row 3, Card 2 in Figma) -->
+            <article class="service-page-card">
+              <div class="service-card-top">
+                <div class="service-card-icon">
+                  <img src="./assets-design/icons/service-05.svg?v=2" alt="" />
+                </div>
+                <p class="service-card-number">05</p>
+              </div>
+              <h3 class="service-card-title">حلول استوديو وتجهيزات تصوير</h3>
+              <p class="service-card-desc">
+                استوديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة للمحترفين
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  دخول ذاتي
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  كروما وإضاءة
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  إنترنت فايبر
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+              </ul>
+              <a class="service-card-link" href="service-detail.html">
+                <img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                زيارة الخدمة
+              </a>
+            </article>
+
+            <!-- Card 09 (Row 3, Card 3 in Figma) -->
+            <article class="service-page-card">
+              <div class="service-card-top">
+                <div class="service-card-icon">
+                  <img src="./assets-design/icons/service-06.svg?v=2" alt="" />
+                </div>
+                <p class="service-card-number">06</p>
+              </div>
+              <h3 class="service-card-title">حلول استوديو وتجهيزات تصوير</h3>
+              <p class="service-card-desc">
+                استوديوهات ومساحات إنتاج بخصوصية تامة، وصول 24/7، مرافق جاهزة للمحترفين
+              </p>
+              <ul class="service-features-list">
+                <li>
+                  دخول ذاتي
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  كروما وإضاءة
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+                <li>
+                  إنترنت فايبر
+                  <img src="./assets-design/icons/check-small.svg" alt="" />
+                </li>
+              </ul>
+              <a class="service-card-link" href="service-detail.html">
+                <img src="./assets-design/icons/arrow-gold.svg" alt="" />
+                زيارة الخدمة
+              </a>
+            </article>
+
+          </div>
+        </section>
       </main>
 
+      <!-- ══ Footer ══ -->
       <footer class="site-footer" id="footer">
         <div class="footer-main">
           <div class="footer-brand">
-            <a class="footer-logo" href="#home" aria-label="AZ Studio">
+            <a class="footer-logo" href="index.html" aria-label="AZ Studio">
               <span class="brand-mark">
-                <img
-                  class="logo-a"
-                  src="./assets-design/icons/logo-a.svg"
-                  alt=""
-                />
-                <img
-                  class="logo-z"
-                  src="./assets-design/icons/logo-z.svg"
-                  alt=""
-                />
+                <img class="logo-a" src="./assets-design/icons/logo-a.svg" alt=""/>
+                <img class="logo-z" src="./assets-design/icons/logo-z.svg" alt=""/>
               </span>
-              <span class="brand-tagline"
-                >A U D I O V I S U A L P R O D U C T I O N</span
-              >
+              <span class="brand-tagline">A U D I O V I S U A L P R O D U C T I O N</span>
             </a>
             <p class="footer-description">
-              استوديو إنتاج فني ورقمي يعمل بعقلية “نظام” قبل “لقطة”. نؤمن أن كل
+              استوديو إنتاج فني ورقمي يعمل بعقلية "نظام" قبل "لقطة". نؤمن أن كل
               مشروع ناجح يبدأ بفهم واضح لهدفه، لذلك ندمج بين التفكير الاستراتيجي
               والإبداع المدروس لصنع محتوى بصري يخدم الأعمال بوضوح.
             </p>
             <div class="footer-contact-list">
               <a href="mailto:info@azstudio.sa">
                 <span>info@Azstudio.sa</span>
-                <img src="./assets-design/icons/mail.svg" alt="" />
+                <img src="./assets-design/icons/mail.svg" alt=""/>
               </a>
               <a href="tel:+966112345678">
                 <span dir="ltr">+966 11 234 5678</span>
-                <img src="./assets-design/icons/phone.svg" alt="" />
+                <img src="./assets-design/icons/phone.svg" alt=""/>
               </a>
               <span>
                 <span>الرياض، المملكة العربية السعودية</span>
-                <img src="./assets-design/icons/pin.svg" alt="" />
+                <img src="./assets-design/icons/pin.svg" alt=""/>
               </span>
             </div>
           </div>
 
           <nav class="footer-column" aria-label="روابط سريعة">
             <h2>روابط سريعة :</h2>
-            <a href="#home">الرئيسية</a>
-            <a href="#about">من نحن</a>
-            <a href="#services">الخدمات</a>
-            <a href="#why">آلية العمل</a>
-            <a href="#work">المخرجات</a>
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="services.html">الخدمات</a>
+            <a href="packages.html">الباقات</a>
+            <a href="process.html">آلية العمل</a>
+            <a href="work.html">المخرجات</a>
+            <a href="sectors.html">القطاعات</a>
           </nav>
 
           <nav class="footer-column" aria-label="الخدمات">
             <h2>الخدمات :</h2>
-            <a href="#services">تصوير منتجات / معماري / بورتريه</a>
-            <a href="#services">أنظمة حركة الهوية</a>
-            <a href="#services">إنتاج فيديو مؤسسي وإعلاني</a>
-            <a href="#services">بودكاست وتسجيل تعليق صوتي</a>
-            <a href="#services">حلول استوديو وتجهيزات تصوير</a>
+            <a href="services.html">تصوير منتجات / معماري / بورتريه</a>
+            <a href="services.html">أنظمة حركة الهوية</a>
+            <a href="services.html">إنتاج فيديو مؤسسي وإعلاني</a>
+            <a href="services.html">بودكاست وتسجيل تعليق صوتي</a>
+            <a href="services.html">حلول استوديو وتجهيزات تصوير</a>
           </nav>
 
           <div class="footer-contact-column">
             <h2>اتصال</h2>
-            <a href="tel:+9665550120" dir="ltr">(409) 555 0120</a>
-            <a href="#contact">WWW.Example.com</a>
-            <a href="#contact">WWW.Example 2.com</a>
-            <a href="#contact">WWW.Example 3.com</a>
-            <p>عمارة ٢٥، حي العليا، الرياض، المملكة العربية السعودية</p>
+            <a href="tel:+966112345678" dir="ltr">+966 11 234 5678</a>
+            <a href="mailto:info@azstudio.sa">info@azstudio.sa</a>
+            <a href="https://azstudio.sa">www.azstudio.sa</a>
+            <p>عمارة ٢٥، طريق الملك فهد، حي العليا، الرياض، المملكة العربية السعودية</p>
           </div>
         </div>
 
@@ -325,15 +433,17 @@
           <p>جميع الحقوق محفوظة، © 2025 AZ Studio.</p>
           <div class="footer-social" aria-label="تابعنا">
             <span>تابعنا:</span>
-            <a href="#contact" aria-label="Instagram">◎</a>
-            <a href="#contact" aria-label="LinkedIn">in</a>
-            <a href="#contact" aria-label="Facebook">f</a>
-            <a href="#contact" aria-label="Twitter">♥</a>
+            <a href="contact.html" aria-label="Instagram"><img src="./assets-design/icons/instagram.svg" alt="Instagram" /></a>
+            <a href="contact.html" aria-label="LinkedIn"><img src="./assets-design/icons/linkedin.svg" alt="LinkedIn" /></a>
+            <a href="contact.html" aria-label="Facebook"><img src="./assets-design/icons/facebook.svg" alt="Facebook" /></a>
+            <a href="contact.html" aria-label="Twitter"><img src="./assets-design/icons/twitter.svg" alt="Twitter" /></a>
           </div>
         </div>
       </footer>
-    </div>
 
+    </div><!-- /page-shell -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

@@ -1,5 +1,8 @@
-<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="svg">
-<path id="Vector" d="M6.98333 3.70124L6.51667 5.21082H3C2.15556 5.24314 1.45222 5.55128 0.89 6.13526C0.327778 6.71925 0.0311111 7.4498 0 8.32692V20.7913C0.0311111 21.6662 0.327778 22.3967 0.89 22.983C1.45222 23.567 2.15556 23.8751 3 23.9075H21C21.8444 23.8751 22.5478 23.567 23.11 22.983C23.6722 22.3967 23.9689 21.6662 24 20.7913V8.32692C23.9689 7.4498 23.6722 6.71925 23.11 6.13526C22.5478 5.55128 21.8444 5.24314 21 5.21082H17.4833L17.0167 3.70124C16.6411 2.69485 15.9222 2.15935 14.86 2.09472H9.14C8.07778 2.15935 7.35889 2.69485 6.98333 3.70124ZM12 9.88498C12.8133 9.88498 13.5633 10.0962 14.25 10.5186C14.9367 10.9387 15.4833 11.5065 15.89 12.2221C16.2967 12.9676 16.5 13.7466 16.5 14.5591C16.5 15.3693 16.2967 16.1483 15.89 16.8962C15.4833 17.6095 14.9367 18.1773 14.25 18.5997C13.5633 19.0221 12.8133 19.2333 12 19.2333C11.1867 19.2333 10.4367 19.0221 9.75 18.5997C9.06333 18.1773 8.51667 17.6095 8.11 16.8962C7.70333 16.1483 7.5 15.3693 7.5 14.5591C7.5 13.7466 7.70333 12.9676 8.11 12.2221C8.51667 11.5065 9.06333 10.9387 9.75 10.5186C10.4367 10.0962 11.1867 9.88498 12 9.88498Z" fill="#FDBA33"/>
-</g>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#FDBA33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M2 9H22" stroke="#FDBA33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 4L5 9" stroke="#FDBA33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 4L10 9" stroke="#FDBA33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17 4L15 9" stroke="#FDBA33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="10 12 10 17 15 14.5" fill="#FDBA33"/>
 </svg>

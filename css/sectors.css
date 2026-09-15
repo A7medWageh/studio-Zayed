@@ -1,0 +1,666 @@
+@import url("./style.css");
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Sectors Page Styling — AZ Studio (القطاعات)
+   Clean, separated CSS — 1:1 Figma Match & Premium Visual Aesthetics
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Main Container ── */
+.sectors-page-main {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  padding-bottom: 120px;
+}
+
+/* ── Ambient Background Lighting (Figma Rays) ── */
+.sectors-rays-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 950px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sectors-ray {
+  position: absolute;
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.sectors-ray-1 {
+  width: 165px;
+  height: 512px;
+  left: calc(50% + 560px);
+  top: -96px;
+  transform: rotate(24deg);
+  background: linear-gradient(180deg, rgba(253, 186, 51, 0.24) 0%, rgba(253, 186, 51, 0) 100%);
+  filter: blur(40px);
+}
+
+.sectors-ray-2 {
+  width: 94px;
+  height: 558px;
+  left: calc(50% + 510px);
+  top: -147px;
+  transform: rotate(24deg);
+  background: linear-gradient(180deg, rgba(253, 186, 51, 0.28) 0%, rgba(253, 186, 51, 0) 100%);
+  filter: blur(20px);
+}
+
+.sectors-ray-3 {
+  width: 166px;
+  height: 558px;
+  left: calc(50% + 370px);
+  top: -200px;
+  transform: rotate(24deg);
+  background: linear-gradient(180deg, rgba(253, 186, 51, 0.24) 0%, rgba(253, 186, 51, 0) 100%);
+  filter: blur(40px);
+}
+
+.sectors-ray-4 {
+  width: 292px;
+  height: 557px;
+  left: calc(50% + 50px);
+  top: -177px;
+  transform: rotate(24deg);
+  background: linear-gradient(141deg, rgba(253, 186, 51, 0.14) 0%, rgba(253, 186, 51, 0) 100%);
+  filter: blur(60px);
+}
+
+.sectors-ray-5 {
+  width: 203px;
+  height: 768px;
+  left: calc(50% - 60px);
+  top: -335px;
+  transform: rotate(24deg);
+  background: linear-gradient(180deg, rgba(253, 186, 51, 0.26) 0%, rgba(253, 186, 51, 0) 100%);
+  filter: blur(50px);
+}
+
+.sectors-ray-6 {
+  width: 22px;
+  height: 645px;
+  left: calc(50% - 100px);
+  top: -130px;
+  transform: rotate(25deg);
+  background: linear-gradient(180deg, rgba(253, 186, 51, 0.12) 0%, rgba(253, 186, 51, 0) 100%);
+  filter: blur(10px);
+}
+
+.sectors-ray-7 {
+  width: 120px;
+  height: 558px;
+  left: calc(50% - 290px);
+  top: -114px;
+  transform: rotate(24deg);
+  background: linear-gradient(180deg, rgba(253, 186, 51, 0.20) 0%, rgba(253, 186, 51, 0) 100%);
+  filter: blur(40px);
+}
+
+.sectors-ray-8 {
+  width: 120px;
+  height: 558px;
+  left: calc(50% - 490px);
+  top: -148px;
+  transform: rotate(24deg);
+  background: linear-gradient(180deg, rgba(253, 186, 51, 0.20) 0%, rgba(253, 186, 51, 0) 100%);
+  filter: blur(40px);
+}
+
+.sectors-ray-9 {
+  width: 120px;
+  height: 558px;
+  left: calc(50% - 390px);
+  top: -123px;
+  transform: rotate(24deg);
+  background: linear-gradient(180deg, rgba(253, 186, 51, 0.18) 0%, rgba(253, 186, 51, 0) 75%);
+  filter: blur(40px);
+}
+
+/* ── Top Mesh Grid Background ── */
+.sectors-grid-bg {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(982px, 94vw);
+  height: 241px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.sectors-grid-bg svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── 1. Hero Section ── */
+.sectors-hero {
+  position: relative;
+  z-index: 1;
+  padding-top: 48px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1255px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.sectors-hero-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 1032px;
+  margin: 0 auto;
+}
+
+.sectors-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 100px;
+  border: 1px solid #FDBA33;
+  backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.24px;
+  white-space: nowrap;
+}
+
+.sectors-hero-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #ffffff;
+  text-align: center;
+  max-width: 920px;
+}
+
+.sectors-hero-title .accent {
+  color: var(--primary, #FDBA33);
+}
+
+.sectors-hero-lead {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  max-width: 1032px;
+}
+
+/* ── 2. Content & Cards Section ── */
+.sectors-content-section {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* ── Section Sub Header (Right-Aligned in RTL) ── */
+.sectors-sub-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: right;
+  gap: 12px;
+  width: 100%;
+}
+
+.sectors-sub-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: right;
+}
+
+.sectors-sub-title .accent {
+  color: var(--primary, #FDBA33);
+}
+
+.sectors-sub-lead {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.50);
+  max-width: 1100px;
+  text-align: right;
+}
+
+/* ── 3. 6 Sectors Cards Grid (3 Columns × 2 Rows) ── */
+.sectors-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 392px)) !important;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  direction: rtl;
+}
+
+/* ── Individual Sector Card (Exact User Dimensions) ── */
+.sector-card {
+  grid-column: auto !important;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  max-width: 392px;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: rgba(30, 30, 30, 0.30);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-sizing: border-box;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sector-card:hover {
+  border-color: rgba(253, 186, 51, 0.75);
+  transform: translateY(-5px);
+  background: rgba(36, 36, 36, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 28px rgba(253, 186, 51, 0.15);
+}
+
+/* Card Top Row (Icon on Right, Number on Left with Space Between) */
+.sector-card-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Icon Container (Right in RTL) */
+.sector-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(253, 186, 51, 0.15);
+  border: 1px solid rgba(253, 186, 51, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.35s ease;
+}
+
+.sector-card:hover .sector-card-icon {
+  background: rgba(253, 186, 51, 0.25);
+  border-color: rgba(253, 186, 51, 0.6);
+  transform: scale(1.06);
+}
+
+.sector-card-icon img,
+.sector-card-icon svg {
+  width: 38px;
+  height: 38px;
+  display: block;
+}
+
+/* Number & Glow Container (Left in RTL) */
+.sector-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sector-card-number {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+  color: #ffffff;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.sector-card-glow {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #FDBA33;
+  opacity: 0.18;
+  filter: blur(25px);
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.sector-card:hover .sector-card-glow {
+  opacity: 0.35;
+  filter: blur(20px);
+}
+
+/* Card Body Content */
+.sector-card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: right;
+}
+
+.sector-card-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #ffffff;
+  text-align: right;
+  transition: color 0.25s ease;
+}
+
+.sector-card:hover .sector-card-title {
+  color: #FDBA33;
+}
+
+.sector-card-desc {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22.75px;
+  color: rgba(255, 255, 255, 0.50);
+  text-align: right;
+}
+
+/* ── Responsive Adjustments (Centered in Tablet & Mobile) ── */
+@media (max-width: 1240px) {
+  .sectors-content-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sectors-cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 392px)) !important;
+    justify-content: center;
+    justify-items: center;
+    gap: 24px;
+  }
+  
+  .sector-card {
+    padding: 28px 24px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .sectors-sub-header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .sectors-sub-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .sectors-sub-lead {
+    text-align: center;
+  }
+
+  .sectors-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 392px)) !important;
+    justify-content: center;
+    justify-items: center;
+    gap: 24px;
+    margin: 0 auto;
+  }
+
+  .sector-card {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 392px;
+  }
+
+  .sectors-hero-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectors-content-section {
+    align-items: center;
+  }
+
+  .sectors-sub-header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .sectors-sub-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .sectors-sub-lead {
+    font-size: 14.5px;
+    text-align: center;
+  }
+
+  .sectors-cards-grid {
+    grid-template-columns: minmax(0, 392px) !important;
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .sector-card {
+    width: 100%;
+    max-width: 392px;
+    margin: 0 auto;
+  }
+
+  /* Footer Centering */
+  .site-footer {
+    text-align: center;
+    padding: 40px 20px 24px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .footer-description {
+    text-align: center !important;
+    max-width: 480px;
+    margin: 12px auto 0 !important;
+  }
+
+  .footer-contact-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .footer-contact-list a,
+  .footer-contact-list > span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    width: auto;
+  }
+
+  .footer-column,
+  .footer-contact-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-column h2,
+  .footer-contact-column h2 {
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .footer-column a,
+  .footer-contact-column a,
+  .footer-contact-column p {
+    text-align: center !important;
+    width: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 16px;
+    padding-top: 20px;
+  }
+
+  .footer-bottom p {
+    text-align: center !important;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sectors-hero {
+    padding-top: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .sectors-hero-title {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+
+  .sectors-hero-lead {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .sectors-content-section {
+    padding-top: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .sectors-sub-header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .sectors-sub-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .sectors-sub-lead {
+    font-size: 13.5px;
+    text-align: center;
+  }
+
+  .sectors-cards-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 392px;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .sector-card {
+    width: 100%;
+    max-width: 392px;
+    padding: 24px 20px;
+    margin: 0 auto;
+  }
+
+  .sector-card-number {
+    font-size: 24px;
+  }
+
+  .sector-card-title {
+    font-size: 18px;
+  }
+
+  .sector-card-desc {
+    font-size: 13.5px;
+  }
+}

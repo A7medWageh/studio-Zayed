@@ -1,0 +1,173 @@
+@import url("./style.css");
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Work / Outputs Page Styling — AZ Studio (صفحة المخرجات)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.work-page-main {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 90px;
+}
+
+.work-hero {
+  width: 100%;
+  padding-top: 36px;
+  position: relative;
+}
+.site-header::before {
+  content: "";
+  position: fixed;
+  top: 0%;
+  left: 80%;
+  width: 113.453px;
+height: 552.008px;
+transform: rotate(26.691deg);
+
+background: linear-gradient(180deg, rgba(253, 186, 51, 0.24) 0%, rgba(253, 186, 51, 0.00) 100%);
+filter: blur(40px);
+}
+.work-hero .content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ── Centered Hero Header ── */
+.work-hero-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.work-hero-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.55;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.work-hero-title .accent {
+  color: var(--primary);
+}
+
+.work-hero-lead {
+  margin: 0;
+  font-size: 15px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 880px;
+  text-align: center;
+}
+
+/* ................out put......................  */
+
+.output-card {
+  width: 100%;
+  min-height: 280px;
+  border-radius: 20px;
+  padding: 24px;
+  background-color: #060504;
+  border: 1px solid #F1F5F9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+
+
+.output-span {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-align: right;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.output-h3 {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 28px;
+  text-align: right;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.output-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.output-card-text .section-lead {
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+.output-card-btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.output-btn-card {
+  width: 100%;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--primary);
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.output-btn-card:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ................out put ...................... */
+
+
+
+
+
+
+/* ── User Custom Content Section (Full width outer with container inside) ── */
+.work-custom-content {
+  width: 100%;
+  padding: 50px 0;
+  position: relative;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .work-hero-title {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  .work-hero-lead {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
