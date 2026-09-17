@@ -2,26 +2,66 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector(".menu-button");
   const navLinks = document.querySelector(".nav-links");
 
-  // ScrollSpy - Only active on the Home page (index.html)
-  const isHomePage = Boolean(
+  // Navbar: hide on scroll down, reveal on scroll up
+  (function initNavbarScrollBehavior() {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function onScroll() {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY;
+
+      if (currentScrollY < 80) {
+        header.classList.remove("nav-hidden");
+        header.classList.add("nav-visible");
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      if (delta > 4) {
+        header.classList.add("nav-hidden");
+        header.classList.remove("nav-visible");
+        if (navLinks) navLinks.classList.remove("is-open");
+        if (menuButton) menuButton.setAttribute("aria-expanded", "false");
+      } else if (delta < -4) {
+        header.classList.remove("nav-hidden");
+        header.classList.add("nav-visible");
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+
+  // ScrollSpy — home page only
+  const isHomePage =
     document.getElementById("home") ||
     document.querySelector(".hero-section") ||
     window.location.pathname.endsWith("index.html") ||
     window.location.pathname === "/" ||
-    window.location.pathname.endsWith("/")
-  );
+    window.location.pathname.endsWith("/");
 
   if (isHomePage) {
     const menuLinks = Array.from(document.querySelectorAll("#main-navigation .nav-links a.nav-link, #main-menu a.nav-link"));
 
     const sectionNavMapping = [
-      { id: "home", text: "الرئيسية", href: "index.html" },
-      { id: "about", text: "من نحن", href: "about.html" },
-      { id: "services", text: "الخدمات", href: "services.html" },
-      { id: "packages", text: "الباقات", href: "packages.html" },
-      { id: "work", text: "المخرجات", href: "work.html" },
-      { id: "sectors", text: "القطاعات", href: "sectors.html" },
-      { id: "contact", text: "اتصل بنا", href: "contact.html" }
+      { id: "home",     text: "الرئيسية",  href: "index.html" },
+      { id: "about",    text: "من نحن",    href: "about.html" },
+      { id: "services", text: "الخدمات",   href: "services.html" },
+      { id: "packages", text: "الباقات",   href: "packages.html" },
+      { id: "work",     text: "المخرجات",  href: "work.html" },
+      { id: "sectors",  text: "القطاعات",  href: "sectors.html" },
+      { id: "contact",  text: "اتصل بنا", href: "contact.html" },
     ];
 
     const trackedSections = sectionNavMapping
@@ -50,31 +90,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const scrollY = window.scrollY;
       const headerHeight = document.querySelector(".site-header")?.offsetHeight || 80;
 
-      // 1. In the beginning (top of home page), strictly highlight 'الرئيسية'
       if (scrollY < 200) {
         setActiveLink(trackedSections[0]?.link);
         return;
       }
 
-      // 2. If scrolled near the bottom of page, highlight the last section (contact)
       if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 70) {
         setActiveLink(trackedSections[trackedSections.length - 1]?.link);
         return;
       }
 
-      // 3. Otherwise, track sections as they enter view
-      const triggerLine = scrollY + headerHeight + (window.innerHeight * 0.25);
+      const triggerLine = scrollY + headerHeight + window.innerHeight * 0.25;
       let activeItem = trackedSections[0];
 
       trackedSections.forEach((item) => {
-        if (item.el.offsetTop <= triggerLine) {
-          activeItem = item;
-        }
+        if (item.el.offsetTop <= triggerLine) activeItem = item;
       });
 
-      if (activeItem) {
-        setActiveLink(activeItem.link);
-      }
+      if (activeItem) setActiveLink(activeItem.link);
     }
 
     window.addEventListener("scroll", updateActiveNav, { passive: true });
@@ -82,9 +115,29 @@ document.addEventListener("DOMContentLoaded", () => {
     updateActiveNav();
   }
 
+  // Accordion
   const accordionHeaders = document.querySelectorAll(".accordion-header");
 
-  // Mobile menu toggle
+  function toggleAccordion(header) {
+    const item = header.closest(".accordion-item");
+    const isOpen = item.classList.contains("is-open");
+
+    document.querySelectorAll(".accordion-item").forEach((entry) => {
+      entry.classList.remove("is-open");
+      entry.querySelector(".accordion-header")?.setAttribute("aria-expanded", "false");
+    });
+
+    if (!isOpen) {
+      item.classList.add("is-open");
+      header.setAttribute("aria-expanded", "true");
+    }
+  }
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", () => toggleAccordion(header));
+  });
+
+  // Mobile menu
   function toggleMobileMenu() {
     const isOpen = navLinks.classList.toggle("is-open");
     menuButton.setAttribute("aria-expanded", String(isOpen));
@@ -101,9 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleMobileMenu();
     });
     navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        closeMobileMenu();
-      });
+      link.addEventListener("click", closeMobileMenu);
     });
     document.addEventListener("click", (e) => {
       if (!navLinks.contains(e.target) && !menuButton.contains(e.target)) {
@@ -112,28 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Accordion toggle
-  function toggleAccordion(header) {
-    const item = header.closest(".accordion-item");
-    const isOpen = item.classList.contains("is-open");
-
-    document.querySelectorAll(".accordion-item").forEach((entry) => {
-      entry.classList.remove("is-open");
-      const h = entry.querySelector(".accordion-header");
-      if (h) h.setAttribute("aria-expanded", "false");
-    });
-
-    if (!isOpen) {
-      item.classList.add("is-open");
-      header.setAttribute("aria-expanded", "true");
-    }
-  }
-
-  accordionHeaders.forEach((header) => {
-    header.addEventListener("click", () => toggleAccordion(header));
-  });
-
-  // Packages tab content generator for home page
+  // Package cards — home page
   const packagesData = {
     studio: [
       {
@@ -210,48 +240,45 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function renderPackageCards(cards) {
-    return `<div class="pricing-grid">` + cards.map(c => `
-      <article class="pricing-card ${c.featured ? 'is-featured' : ''}">
+    return (
+      `<div class="pricing-grid">` +
+      cards
+        .map(
+          (card) => `
+      <article class="pricing-card ${card.featured ? "is-featured" : ""}">
         <div>
           <div class="pricing-card-top">
-            <span class="save-badge">${c.save}</span>
-            <h3>${c.title}</h3>
+            <span class="save-badge">${card.save}</span>
+            <h3>${card.title}</h3>
           </div>
-          <p class="pricing-copy">${c.desc}</p>
+          <p class="pricing-copy">${card.desc}</p>
           <div class="price-row">
             <span class="period">/ شهريا</span>
-            <img src="./assets-design/icons/${c.featured ? 'riyal-alt.svg' : 'riyal.svg'}" alt="ر.س" />
-            <span class="amount">${c.price}</span>
+            <img src="./assets-design/icons/${card.featured ? "riyal-alt.svg" : "riyal.svg"}" alt="ر.س" />
+            <span class="amount">${card.price}</span>
           </div>
         </div>
         <ul class="include-list">
-          ${c.features.map(f => `
-            <li>
-              ${f}
-              <span class="check-circle"><img src="./assets-design/icons/check-small.svg" alt="" /></span>
-            </li>
-          `).join('')}
+          ${card.features.map((f) => `<li>${f}<span class="check-circle"><img src="./assets-design/icons/check-small.svg" alt="" /></span></li>`).join("")}
         </ul>
         <a class="gold-button w-100 text-center text-decoration-none" href="package-detail.html">اشترك الآن</a>
-      </article>
-    `).join('') + `</div>`;
+      </article>`
+        )
+        .join("") +
+      `</div>`
+    );
   }
 
-  // Populate dynamic package panes
   const studioPane = document.getElementById("packages-studio");
-  if (studioPane && packagesData.studio) {
-    studioPane.innerHTML = renderPackageCards(packagesData.studio);
-  }
-  const podcastPane = document.getElementById("packages-podcast");
-  if (podcastPane && packagesData.podcast) {
-    podcastPane.innerHTML = renderPackageCards(packagesData.podcast);
-  }
-  const audioPane = document.getElementById("packages-audio");
-  if (audioPane && packagesData.audio) {
-    audioPane.innerHTML = renderPackageCards(packagesData.audio);
-  }
+  if (studioPane) studioPane.innerHTML = renderPackageCards(packagesData.studio);
 
-  // Toast notification for prototype feedback
+  const podcastPane = document.getElementById("packages-podcast");
+  if (podcastPane) podcastPane.innerHTML = renderPackageCards(packagesData.podcast);
+
+  const audioPane = document.getElementById("packages-audio");
+  if (audioPane) audioPane.innerHTML = renderPackageCards(packagesData.audio);
+
+  // Toast feedback for form submissions
   function showToast(message) {
     let toast = document.getElementById("prototype-toast");
     if (!toast) {
@@ -292,20 +319,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4000);
   }
 
-  // Handle all form submissions with interactive feedback
+  // Handle form submissions
   document.querySelectorAll("form").forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (form.classList.contains("newsletter-form")) {
-        showToast("شكرًا لاشتراكك في النشرة البريدية لـ AZ Studio!");
-        form.reset();
-      } else {
-        showToast("تم استلام طلبكم بنجاح! سيتواصل معكم فريقنا خلال 24 ساعة.");
-        form.reset();
-      }
+      const message = form.classList.contains("newsletter-form")
+        ? "شكرًا لاشتراكك في النشرة البريدية لـ AZ Studio!"
+        : "تم استلام طلبكم بنجاح! سيتواصل معكم فريقنا خلال 24 ساعة.";
+      showToast(message);
+      form.reset();
     });
   });
 });
-
-
-

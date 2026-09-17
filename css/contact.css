@@ -463,94 +463,111 @@
 
 @media (max-width: 768px) {
   .contact-hero {
-    padding-top: 24px;
-    padding-bottom: 16px;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    text-align: center;
+    padding-top: 42px !important;
+    padding-bottom: 24px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    text-align: center !important;
   }
 
   .contact-hero-header {
     padding: 0 !important;
-    text-align: center;
-    align-items: center;
-    gap: 14px;
+    text-align: center !important;
+    align-items: center !important;
+    gap: 14px !important;
   }
 
   .contact-badge {
-    margin: 0 auto;
+    margin: 0 auto !important;
   }
 
   .contact-hero-title {
-    font-size: 20px;
-    line-height: 32px;
-    text-align: center;
+    font-size: 22px !important;
+    line-height: 32px !important;
+    text-align: center !important;
   }
 
   .contact-hero-lead {
-    font-size: 14px;
-    line-height: 22px;
-    text-align: center;
+    font-size: 13.5px !important;
+    line-height: 24px !important;
+    text-align: center !important;
   }
 
   .contact-content-section {
-    padding: 20px 20px 0 !important;
+    padding-top: 24px !important;
+    padding-bottom: 48px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
 
   .contact-card {
-    padding: 24px 18px;
+    padding: 24px 20px !important;
+    border-radius: 20px !important;
   }
 
   .contact-card-title {
-    font-size: 20px;
-    line-height: 28px;
-    text-align: center;
+    font-size: 20px !important;
+    line-height: 28px !important;
+    text-align: right !important;
   }
 
   .contact-card-subtitle {
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
+    font-size: 13.5px !important;
+    line-height: 22px !important;
+    text-align: right !important;
   }
 
   .form-row {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 14px !important;
   }
 
   .form-textarea {
-    min-height: 160px;
-  }
-
-  .contact-channel-item {
-    padding: 14px 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-hero {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  .contact-content-section {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  .contact-hero-title {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  .contact-badge {
-    font-size: 12px;
-    height: 28px;
-    padding: 4px 14px;
+    min-height: 140px !important;
   }
 
   .contact-submit-btn {
-    font-size: 15px;
-    height: 44px;
+    width: 100% !important;
+    height: 48px !important;
+    font-size: 15px !important;
+    border-radius: 10px !important;
+  }
+
+  .info-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px !important;
+    direction: rtl !important;
+  }
+
+  .info-details {
+    text-align: right !important;
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-hero {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .contact-content-section {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .contact-hero-title {
+    font-size: 20px !important;
+  }
+
+  .contact-card {
+    padding: 20px 14px !important;
   }
 }

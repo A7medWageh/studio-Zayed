@@ -788,157 +788,171 @@
 
 @media (max-width: 768px) {
   .wd-hero {
-    padding-top: 20px;
-    padding-bottom: 36px;
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
   }
 
   .wd-hero-inner {
-    padding: 0 20px !important;
-    gap: 16px;
+    padding: 0 18px !important;
+    gap: 16px !important;
   }
 
   .wd-hero-title {
-    font-size: 22px;
-    line-height: 36px;
-    text-align: center;
+    font-size: 22px !important;
+    line-height: 34px !important;
+    text-align: center !important;
   }
 
   .wd-hero-lead {
-    font-size: 13.5px;
-    line-height: 24px;
-    text-align: center;
+    font-size: 13.5px !important;
+    line-height: 24px !important;
+    text-align: center !important;
   }
 
   .wd-phases {
-    padding: 30px 20px 40px !important;
+    padding: 42px 18px !important;
   }
 
   .wd-phases-header,
   .wd-videos-header {
     align-items: center !important;
     text-align: center !important;
-    gap: 8px;
-    margin-bottom: 24px;
+    gap: 8px !important;
+    margin-bottom: 24px !important;
   }
 
   .wd-phases-title,
   .wd-videos-title {
-    font-size: 20px;
+    font-size: 20px !important;
     text-align: center !important;
   }
 
   .wd-phases-lead,
   .wd-videos-lead {
-    font-size: 13.5px;
-    line-height: 22px;
+    font-size: 13.5px !important;
+    line-height: 22px !important;
     text-align: center !important;
   }
 
   .wd-phases-row {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
   }
 
   .wd-objectives {
-    padding: 36px 0;
+    padding: 42px 0 !important;
   }
 
   .wd-objectives-inner {
-    padding: 0 20px !important;
-    gap: 20px;
+    padding: 0 18px !important;
+    gap: 20px !important;
   }
 
   .wd-section-label {
-    font-size: 20px;
+    font-size: 20px !important;
     text-align: center !important;
   }
 
   .wd-obj-card {
-    padding: 20px 18px;
+    padding: 20px 18px !important;
+    text-align: right !important;
+    direction: rtl !important;
   }
 
   .wd-scope {
-    padding: 36px 20px !important;
+    padding: 42px 18px !important;
   }
 
   .wd-scope-inner {
-    align-items: center;
-    gap: 20px;
+    align-items: center !important;
+    gap: 20px !important;
   }
 
   .wd-scope-card {
-    padding: 24px 18px;
-    border-radius: 20px;
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+    text-align: right !important;
+    direction: rtl !important;
   }
 
   .wd-scope-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
   }
 
   .wd-results {
-    padding: 36px 0;
+    padding: 42px 0 !important;
   }
 
   .wd-results-inner {
-    padding: 0 20px !important;
-    gap: 24px;
+    padding: 0 18px !important;
+    gap: 24px !important;
   }
 
   .wd-stats-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
   }
 
   .wd-stat-card {
-    padding: 24px 14px;
+    padding: 22px 14px !important;
+    border-radius: 16px !important;
   }
 
   .wd-stat-number {
-    font-size: 36px;
-    line-height: 40px;
+    font-size: 32px !important;
+    line-height: 38px !important;
   }
 
   .wd-achieve-row {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
   }
 
   .wd-achieve-item {
-    padding: 16px 18px;
+    padding: 16px 18px !important;
+    border-radius: 14px !important;
+    text-align: right !important;
+    direction: rtl !important;
   }
 
   .wd-achieve-text {
-    font-size: 14.5px;
-    line-height: 24px;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    text-align: right !important;
   }
 
   .wd-videos {
-    padding: 36px 20px 60px !important;
+    padding: 42px 18px 50px !important;
   }
 
   .wd-videos-grid {
-    gap: 20px;
+    gap: 20px !important;
+  }
+
+  .wd-video-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .wd-hero-inner,
   .wd-phases,
   .wd-objectives-inner,
   .wd-scope,
   .wd-results-inner,
   .wd-videos {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 
   .wd-hero-title {
-    font-size: 19px;
-    line-height: 30px;
+    font-size: 19px !important;
+    line-height: 28px !important;
   }
 
   .wd-stats-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }

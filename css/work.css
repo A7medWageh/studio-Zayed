@@ -71,6 +71,7 @@ filter: blur(40px);
 
 .output-card {
   width: 100%;
+  height: 100%;
   min-height: 280px;
   border-radius: 20px;
   padding: 24px;
@@ -79,10 +80,17 @@ filter: blur(40px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
+  text-align: right;
+  direction: rtl;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-
+.output-card > div:first-child {
+  width: 100%;
+  text-align: right;
+  direction: rtl;
+}
 
 .output-span {
   font-family: "IBM Plex Sans Arabic", sans-serif;
@@ -92,7 +100,8 @@ filter: blur(40px);
   text-align: right;
   text-transform: uppercase;
   color: var(--primary);
-  display: inline-block;
+  display: block;
+  width: 100%;
   margin-bottom: 6px;
 }
 
@@ -103,21 +112,43 @@ filter: blur(40px);
   line-height: 28px;
   text-align: right;
   color: #FFFFFF;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  width: 100%;
 }
 
 .output-card-text {
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin: 0 0 24px 0;
+  padding: 0;
+  text-align: right;
+  direction: rtl;
 }
 
 .output-card-text .section-lead {
-  
-  line-height: 20px;
-  color: rgba(255, 255, 255, 0.65);
-  margin: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  text-align: right !important;
+  direction: rtl !important;
+  font-size: 12.2px !important;
+  line-height: 24px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.output-card-text .section-lead strong {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  display: inline !important;
+  margin-left: 5px !important;
 }
 
 .output-card-btn {
@@ -179,82 +210,160 @@ filter: blur(40px);
 
 @media (max-width: 768px) {
   .work-hero {
-    padding-top: 24px;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-top: 42px !important;
+    padding-bottom: 24px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
 
   .work-hero .content-wrap {
-    gap: 32px;
+    gap: 28px !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
 
   .work-hero-header {
-    gap: 14px;
+    gap: 14px !important;
+    text-align: center !important;
+    align-items: center !important;
   }
 
   .work-hero-title {
-    font-size: 22px;
-    line-height: 1.4;
-    text-align: center;
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
   }
 
   .work-hero-lead {
-    font-size: 13.5px;
-    line-height: 24px;
-    text-align: center;
+    font-size: 13.5px !important;
+    line-height: 24px !important;
+    text-align: center !important;
   }
 
   .work-custom-content {
-    padding: 30px 0;
+    padding-top: 24px !important;
+    padding-bottom: 48px !important;
   }
 
   .work-custom-content .content-wrap {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
 
   .sec1-output-heading {
     text-align: center !important;
-    margin-bottom: 24px;
+    margin-bottom: 28px !important;
   }
 
   .sec1-output-heading .section-title {
-    font-size: 20px;
+    font-size: 20px !important;
     text-align: center !important;
-    margin-bottom: 8px;
+    margin-bottom: 8px !important;
   }
 
   .sec1-output-heading .section-lead {
-    font-size: 13.5px;
-    line-height: 22px;
+    font-size: 13.5px !important;
+    line-height: 22px !important;
     text-align: center !important;
   }
 
   .output-card {
-    padding: 22px 18px;
-    min-height: auto;
+    padding: 20px 14px !important;
+    min-height: auto !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: right !important;
+    direction: rtl !important;
+  }
+
+  .output-card > div:first-child {
+    width: 100% !important;
+    text-align: right !important;
+    direction: rtl !important;
+  }
+
+  .output-span {
+    display: block !important;
+    width: 100% !important;
+    text-align: right !important;
+    margin: 0 0 8px 0 !important;
   }
 
   .output-h3 {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 19px !important;
+    line-height: 27px !important;
+    text-align: right !important;
+    margin: 0 0 14px 0 !important;
+    width: 100% !important;
+  }
+
+  .output-card-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 20px 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: right !important;
+    direction: rtl !important;
+    gap: 10px !important;
+  }
+
+  .output-card-text .section-lead {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    text-align: right !important;
+    direction: rtl !important;
+    font-size: clamp(10.5px, 2.5vw, 12px) !important;
+    line-height: 24px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .output-card-text .section-lead strong {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    display: inline !important;
+    margin-left: 5px !important;
+  }
+
+  .output-btn-card {
+    width: 100% !important;
+    height: 46px !important;
+    font-size: 14.5px !important;
+    border-radius: 12px !important;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .work-hero {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 
   .work-custom-content .content-wrap {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 
   .work-hero-title {
-    font-size: 20px;
+    font-size: 20px !important;
+  }
+
+  .output-card {
+    padding: 20px 16px !important;
+  }
+
+  .output-card-text .section-lead strong {
+    flex: 0 0 58px !important;
+    min-width: 58px !important;
+    max-width: 58px !important;
   }
 }

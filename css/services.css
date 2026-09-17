@@ -276,77 +276,156 @@
 
 @media (max-width: 767px) {
   .services-hero {
-    padding-top: 24px;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    gap: 28px;
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    gap: 32px !important;
   }
 
   .services-hero-header {
-    text-align: center;
-    align-items: center;
-    gap: 14px;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    margin-bottom: 12px !important;
   }
 
   .services-hero-title {
-    font-size: 22px;
-    line-height: 1.4;
-    text-align: center;
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
   }
 
   .services-hero-lead {
-    font-size: 13.5px;
-    line-height: 24px;
-    text-align: center;
+    font-size: 13.5px !important;
+    line-height: 24px !important;
+    text-align: center !important;
   }
 
   .services-sub-header {
     align-items: center !important;
     text-align: center !important;
     justify-content: center !important;
-    gap: 8px;
+    gap: 8px !important;
   }
 
   .services-sub-title {
-    font-size: 20px;
+    font-size: 20px !important;
     text-align: center !important;
   }
 
   .services-sub-lead {
-    font-size: 13.5px;
-    line-height: 22px;
+    font-size: 13.5px !important;
+    line-height: 22px !important;
     text-align: center !important;
   }
 
   .services-cards-grid {
     grid-template-columns: minmax(0, 420px) !important;
-    justify-content: center;
-    justify-items: center;
-    margin: 0 auto;
-    width: 100%;
-    gap: 18px;
+    justify-content: center !important;
+    justify-items: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    gap: 20px !important;
   }
 
   .service-page-card {
-    max-width: 420px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 26px 20px;
-    min-height: auto;
+    max-width: 420px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 26px 20px !important;
+    min-height: auto !important;
+    border-radius: 24px !important;
+  }
+
+  /* Balanced top row: Icon & Number on opposite sides */
+  .service-card-top {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  .service-card-title {
+    font-size: 19px !important;
+    line-height: 27px !important;
+    text-align: center !important;
+  }
+
+  .service-card-desc {
+    font-size: 13.5px !important;
+    line-height: 22px !important;
+    text-align: center !important;
+  }
+
+  /* RTL Checkmark List: [✓] positioned strictly on the RIGHT side of text */
+  .service-features-list {
+    align-items: flex-end !important;
+    gap: 10px !important;
+    width: 100% !important;
+    padding: 0 12px !important;
+    margin: 0 0 20px !important;
+  }
+
+  .service-features-list li {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    text-align: right !important;
+    direction: rtl !important;
+    gap: 10px !important;
+    width: 100% !important;
+    font-size: 13.5px !important;
+  }
+
+  .service-features-list li img {
+    flex-shrink: 0 !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Card Action Link: touch target */
+  .service-card-link {
+    width: 100% !important;
+    max-width: 280px !important;
+    height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+    background: rgba(253, 186, 51, 0.12) !important;
+    border: 1px solid rgba(253, 186, 51, 0.3) !important;
+    color: var(--primary) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin: 14px auto 0 !important;
+    text-decoration: none !important;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .services-hero {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 
   .services-hero-title {
-    font-size: 20px;
+    font-size: 20px !important;
   }
 
   .services-sub-title {
-    font-size: 18px;
+    font-size: 18px !important;
+  }
+
+  .service-page-card {
+    padding: 22px 16px !important;
+  }
+
+  .service-card-link {
+    max-width: 100% !important;
   }
 }

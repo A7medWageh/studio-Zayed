@@ -349,8 +349,15 @@ letter-spacing: 0px;
 }
 
 @media (max-width: 767px) {
-    .about-page-hero {
-        padding-top: 16px;
+    /* Uniform Section Spacing */
+    .about-page-hero,
+    .our-value,
+    .our-value2,
+    .chalenges,
+    .president {
+        padding-top: 42px !important;
+        padding-bottom: 42px !important;
+        margin: 0 !important;
     }
 
     .about-page-hero .container,
@@ -358,15 +365,16 @@ letter-spacing: 0px;
     .our-value2 .container,
     .chalenges .container,
     .president .container {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
     }
 
+    /* Hero Section Headers */
     .about-page-hero .section-header {
         text-align: center !important;
         align-items: center !important;
         justify-content: center !important;
-        margin-bottom: 24px !important;
+        margin-bottom: 28px !important;
     }
 
     .about-page-hero .section-title {
@@ -381,110 +389,177 @@ letter-spacing: 0px;
         text-align: center !important;
     }
 
+    /* Logical UX Ordering: Title -> Text -> Note -> Image -> CTA Button */
+    .about-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
     .about-copy {
-        align-items: center !important;
-        text-align: center !important;
+        display: contents !important;
+    }
+
+    .about-copy > div:first-child {
+        order: 1 !important;
+        text-align: right !important;
+        direction: rtl !important;
     }
 
     .about-heading {
         font-size: 20px !important;
         line-height: 30px !important;
-        text-align: center !important;
+        text-align: right !important;
+        margin-bottom: 12px !important;
     }
 
     .about-body {
-        font-size: 13.5px !important;
+        font-size: 14px !important;
         line-height: 24px !important;
-        text-align: center !important;
+        text-align: right !important;
     }
 
     .about-note {
-        text-align: center !important;
+        order: 2 !important;
+        text-align: right !important;
+        direction: rtl !important;
         padding: 18px 16px !important;
+        border-radius: 16px !important;
     }
 
     .about-note-title,
     .about-note-text {
+        text-align: right !important;
+    }
+
+    .about-media {
+        order: 3 !important;
+        width: 100% !important;
+        max-width: 480px !important;
+        margin: 10px auto 0 !important;
+    }
+
+    .about-media-img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 20px !important;
+    }
+
+    /* CTA Button positioned after media with proper mobile width */
+    .about-copy .pill-button {
+        order: 4 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 48px !important;
+        margin: 16px auto 0 !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+    }
+
+    /* Feature Cards (Vision, Mission, Values) */
+    .our-val-p1 {
+        font-size: 20px !important;
+        line-height: 30px !important;
         text-align: center !important;
     }
 
-    .about-copy .pill-button {
-        margin: 12px auto 0 !important;
+    .our-val-p2 {
+        font-size: 14px !important;
+        line-height: 24px !important;
+        text-align: center !important;
     }
 
     .feature-card {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding: 24px 18px !important;
+        align-items: flex-start !important;
+        text-align: right !important;
+        direction: rtl !important;
+        padding: 24px 20px !important;
+        border-radius: 20px !important;
     }
 
     .feature-card-icon {
-        margin: 0 auto 14px !important;
+        margin: 0 0 14px 0 !important;
     }
 
     .feature-card-title {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 18px !important;
         margin-bottom: 8px !important;
+        width: 100% !important;
     }
 
     .feature-card-text {
-        text-align: center !important;
-        font-size: 13px !important;
-        line-height: 22px !important;
+        text-align: right !important;
+        font-size: 13.5px !important;
+        line-height: 23px !important;
     }
 
+    /* Core Values 2 Cards */
     .our-value2-card {
-        padding: 24px 18px !important;
-        text-align: center !important;
+        padding: 24px 20px !important;
+        text-align: right !important;
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        direction: rtl !important;
+        border-radius: 20px !important;
+    }
+
+    .our-value2-span {
+        font-size: 32px !important;
+        line-height: 1 !important;
+        margin-bottom: 8px !important;
     }
 
     .our-value2-card .section-title {
         font-size: 18px !important;
-        text-align: center !important;
-        margin-bottom: 6px !important;
+        text-align: right !important;
+        margin-bottom: 8px !important;
     }
 
     .our-value2-card .section-lead {
-        font-size: 13px !important;
-        text-align: center !important;
+        font-size: 13.5px !important;
+        line-height: 22px !important;
+        text-align: right !important;
     }
 
-    /* President section mobile centering */
-    .president .container {
-        padding: 30px 16px !important;
-    }
-
+    /* President Section */
     .president-contant {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        margin-bottom: 28px !important;
+        align-items: flex-start !important;
+        text-align: right !important;
+        direction: rtl !important;
+        margin-bottom: 24px !important;
     }
 
     .president-text1 {
-        justify-content: center !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
         align-items: center !important;
-        text-align: center !important;
+        direction: rtl !important;
         margin-bottom: 16px !important;
+        gap: 12px !important;
     }
 
     .president-text1-h3 {
         font-size: 20px !important;
-        text-align: center !important;
+        text-align: right !important;
     }
 
     .president-text2-p {
-        font-size: 13.5px !important;
+        font-size: 14px !important;
         line-height: 24px !important;
-        text-align: center !important;
+        text-align: right !important;
+        direction: rtl !important;
     }
 
     .president-img {
@@ -497,5 +572,25 @@ letter-spacing: 0px;
     .president-img img {
         max-width: 100% !important;
         margin: 0 auto !important;
+        border-radius: 20px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-page-hero .container,
+    .our-value .container,
+    .our-value2 .container,
+    .chalenges .container,
+    .president .container {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    .about-page-hero .section-title {
+        font-size: 20px !important;
+    }
+
+    .about-copy .pill-button {
+        max-width: 100% !important;
     }
 }

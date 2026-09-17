@@ -1,4 +1,8 @@
-/* Base */
+/* ============================================================
+   AZ Studio — Global Stylesheet
+   ============================================================ */
+
+/* Design Tokens */
 :root {
     --space-1: 4px;
     --space-2: 8px;
@@ -91,8 +95,6 @@ body {
     background: var(--black);
     color: var(--white);
     font-family: "IBM Plex Sans Arabic", sans-serif;
-    
-    
 }
 
 img {
@@ -118,6 +120,7 @@ select {
     width: 100%;
     margin: 0 auto;
     overflow-x: clip;
+    padding-top: 110px;
 }
 
 .content-wrap {
@@ -125,6 +128,29 @@ select {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px; 
+}
+
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-900);
+  border-radius: 6px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 8px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-400);
 }
 
 /* Typography */
@@ -298,25 +324,16 @@ select {
     color: #fff;
 }
 
-.pill-button.is-light {
-    background: #fff;
-    border-color: transparent;
-    color: rgba(12, 12, 12, 0.95);
-}
-
-.pill-button.is-light:hover {
-    background: #f0f0f0;
-    color: #000;
-}
-
+.pill-button.is-light,
 .pill-button.is-white {
-    background: #ffffff;
+    background: #fff;
     border-color: transparent;
     color: #131313;
 }
 
+.pill-button.is-light:hover,
 .pill-button.is-white:hover {
-    background: #f5f5f5;
+    background: #f0f0f0;
     color: #000;
 }
 
@@ -357,9 +374,9 @@ select {
     cursor: pointer;
 }
 
-/* Navbar Grid Mesh & Ambient Glow (شبكة ووهج الناف بار والهيرو 1:1 فيجما) */
+/* Navbar spotlight glow */
 .navbar-spotlight {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -367,13 +384,13 @@ select {
     max-width: 1440px;
     height: 520px;
     pointer-events: none;
-    z-index: 1;
+    z-index: 99;
     overflow: hidden;
     display: flex;
     justify-content: center;
 }
 
-/* Ambient Golden Glow */
+/* Ambient golden glow overlay */
 .navbar-spotlight::before {
     position: absolute;
     top: -50px;
@@ -390,7 +407,7 @@ select {
     pointer-events: none;
 }
 
-/* 1:1 Figma SVG Grid Vector */
+/* SVG grid vector */
 .spotlight-grid-svg {
     position: absolute;
     top: 0;
@@ -405,20 +422,31 @@ select {
 
 /* Header */
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 10;
+    left: 0;
+    right: 0;
+    z-index: 100;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 24px 80px 0;
-    transition: padding 0.2s ease;
+    padding: 18px 80px 0;
+    transition: padding 0.2s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+
+.site-header.nav-hidden {
+    transform: translateY(-120%);
+}
+
+.site-header.nav-visible {
+    transform: translateY(0);
 }
 
 .site-header::before {
     content: "";
     position: fixed;
-    top: 0%;
+    top: 0;
     left: 80%;
     width: 113.453px;
     height: 552.008px;
@@ -2466,7 +2494,7 @@ select {
         height: 44px !important;
         padding: 0 !important;
         border: 1px solid rgba(255, 255, 255, 0.18) !important;
-        border-radius: 12px !important;
+        border-radius: 50% !important;
         background: rgba(255, 255, 255, 0.08) !important;
         color: #ffffff !important;
         font-size: 24px !important;
@@ -2797,9 +2825,20 @@ select {
 }
 
 @media (max-width: 767px) {
+    html,
+    body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+
+    .page-shell {
+        overflow-x: hidden !important;
+        padding-top: 80px !important; /* fixed navbar on mobile */
+    }
+
     .content-wrap {
-        padding-right: 20px !important;
-        padding-left: 20px !important;
+        padding-right: 16px !important;
+        padding-left: 16px !important;
     }
 
     .site-header {
@@ -2810,10 +2849,62 @@ select {
         height: 600px;
     }
 
-    /* ════ Hero Section (Buttons Side by Side) ════ */
+    /* ════ Consistent Section Spacing Across All Sections ════ */
+    .about-section,
+    .why-section,
+    .services-section,
+    .packages-section,
+    .work-section,
+    .sectors-section,
+    .faq-section {
+        padding-top: 42px !important;
+        padding-bottom: 42px !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* ════ Section Headers (Consistent Spacing & Alignment) ════ */
+    .section-header,
+    .section-header-split,
+    .packages-split-header,
+    .faq-header {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-bottom: 28px !important;
+    }
+
+    .section-badge {
+        margin: 0 auto 10px !important;
+        align-self: center !important;
+        text-align: center !important;
+    }
+
+    .section-title,
+    .system-title {
+        font-size: 22px !important;
+        line-height: 32px !important;
+        text-align: center !important;
+        margin: 0 auto 10px !important;
+        max-width: 100% !important;
+    }
+
+    .section-lead {
+        font-size: 13.5px !important;
+        line-height: 22px !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        max-width: 540px !important;
+        color: rgba(255, 255, 255, 0.65) !important;
+    }
+
+    /* ════ Hero Section ════ */
     .hero-section {
-        padding: 30px 20px 0 !important;
-        gap: 36px !important;
+        padding: 28px 16px 0 !important;
+        gap: 32px !important;
     }
 
     .hero-content {
@@ -2821,50 +2912,52 @@ select {
         align-items: center !important;
         justify-content: center !important;
         margin: 0 auto !important;
-        gap: 24px !important;
+        gap: 20px !important;
+        width: 100% !important;
     }
 
     .hero-title {
-        font-size: 30px !important;
-        line-height: 42px !important;
+        font-size: clamp(24px, 6.8vw, 30px) !important;
+        line-height: 1.35 !important;
         letter-spacing: -0.5px !important;
         text-align: center !important;
     }
 
     .hero-description {
-        font-size: 14px !important;
-        line-height: 25px !important;
+        font-size: 13.5px !important;
+        line-height: 23px !important;
         text-align: center !important;
+        color: rgba(255, 255, 255, 0.75) !important;
     }
 
     .hero-actions {
         width: 100% !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 20px !important;
+        gap: 16px !important;
     }
 
-    /* Here: Buttons Side by Side horizontally on mobile */
     .hero-buttons {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
-        gap: 12px !important;
-        flex-wrap: nowrap !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
     }
 
     .hero-buttons .pill-button {
-        width: auto !important;
-        max-width: none !important;
-        min-width: 130px !important;
+        flex: 1 1 135px !important;
+        max-width: 180px !important;
+        min-width: 125px !important;
         min-height: 44px !important;
         height: 44px !important;
-        padding: 6px 16px 6px 8px !important;
+        padding: 6px 14px 6px 8px !important;
         font-size: 13px !important;
         gap: 8px !important;
         margin: 0 !important;
+        justify-content: center !important;
     }
 
     .hero-buttons .pill-button .button-icon {
@@ -2879,7 +2972,7 @@ select {
 
     .hero-glow {
         margin: 0 auto !important;
-        width: 260px !important;
+        width: min(260px, 80vw) !important;
     }
 
     .clients-bar {
@@ -2891,7 +2984,7 @@ select {
     .clients-title {
         text-align: center !important;
         margin-bottom: 14px !important;
-        font-size: 15px !important;
+        font-size: 14px !important;
     }
 
     .clients-row {
@@ -2902,184 +2995,395 @@ select {
     }
 
     .clients-row img {
-        height: 36px !important;
+        height: 32px !important;
+        max-width: 100px !important;
+        object-fit: contain !important;
     }
 
-    /* ════ Single Column Grids & Centered Cards ════ */
-    .reason-grid,
-    .service-grid,
-    .system-grid,
-    .pricing-grid,
-    .work-grid,
-    .sector-grid,
-    .faq-grid,
-    .contact-pair {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-    }
-
-    .reason-card,
-    .service-card,
-    .pricing-card,
-    .work-card,
-    .sector-card,
-    .system-card {
-        grid-column: span 1 !important;
-    }
-
-    .section-title,
-    .system-title {
-        font-size: 22px !important;
-        line-height: 32px !important;
-        text-align: center !important;
-    }
-
-    /* ════ Reason Cards Centering ════ */
-    .reason-card {
+    /* ════ About Section (Logical UX Order: Text -> Note -> Image -> Button) ════ */
+    .about-layout {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
+        gap: 20px !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .about-copy {
+        display: contents !important;
+    }
+
+    .about-copy > div:first-child {
+        order: 1 !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .about-heading {
+        text-align: center !important;
+        font-size: 19px !important;
+        line-height: 28px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .about-heading-sub {
+        display: block !important;
+        margin-top: 4px !important;
+    }
+
+    .about-body {
+        text-align: center !important;
+        font-size: 13.5px !important;
+        line-height: 23px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .about-note {
+        order: 2 !important;
+        text-align: right !important;
+        direction: rtl !important;
+        padding: 18px 16px !important;
+        border-radius: 16px !important;
+        width: 100% !important;
+        margin: 4px 0 !important;
+    }
+
+    .about-note-title {
+        text-align: right !important;
+        font-size: 14px !important;
+        line-height: 22px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .about-note-text {
+        text-align: right !important;
+        font-size: 12.5px !important;
+        line-height: 21px !important;
+        color: rgba(255, 255, 255, 0.65) !important;
+    }
+
+    .about-media {
+        order: 3 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 280px !important;
+        margin: 8px 0 !important;
+        position: relative !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+    }
+
+    .about-media-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 20px !important;
+    }
+
+    .about-quote-container {
+        padding: 16px !important;
+        border-radius: 20px !important;
+    }
+
+    .about-quote-top,
+    .about-quote-bottom {
+        font-size: clamp(15px, 4.5vw, 18px) !important;
+        white-space: normal !important;
+        text-align: center !important;
+        line-height: 1.35 !important;
+    }
+
+    .about-diamond-wrapper {
+        margin: -2px 0 !important;
+    }
+
+    .about-diamond-svg {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .about-copy .pill-button {
+        order: 4 !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        min-height: 48px !important;
+        margin: 12px auto 0 !important;
         justify-content: center !important;
-        padding: 24px 18px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        border-radius: 50px !important;
+    }
+
+    .dot-grid,
+    .slash-row {
+        display: none !important;
+    }
+
+    /* ════ Why Section & Cards (RTL Aligned, Professional) ════ */
+    .reason-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        width: 100% !important;
+    }
+
+    .reason-card {
+        grid-column: span 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: right !important;
+        justify-content: flex-start !important;
+        direction: rtl !important;
+        padding: 22px 18px !important;
         min-height: auto !important;
+        border-radius: 18px !important;
     }
 
     .reason-number {
-        text-align: center !important;
+        text-align: right !important;
+        font-size: 26px !important;
+        font-weight: 700 !important;
         margin-bottom: 8px !important;
-        font-size: 28px !important;
+        color: var(--primary) !important;
+        line-height: 1 !important;
     }
 
     .reason-title {
-        text-align: center !important;
+        text-align: right !important;
+        font-size: 16.5px !important;
         margin-bottom: 6px !important;
-        font-size: 17px !important;
+        color: #ffffff !important;
     }
 
     .reason-text {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 13px !important;
         line-height: 22px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        margin: 0 !important;
     }
 
-    /* ════ System Cards Centering ════ */
     .system-strip {
         text-align: center !important;
-        margin-top: 36px !important;
+        margin-top: 32px !important;
+        width: 100% !important;
+    }
+
+    .system-title {
+        font-size: 20px !important;
+        line-height: 28px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .system-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        width: 100% !important;
     }
 
     .system-card {
+        grid-column: span 1 !important;
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center !important;
-        text-align: center !important;
-        justify-content: center !important;
-        gap: 10px !important;
-        padding: 18px 16px !important;
+        justify-content: flex-start !important;
+        gap: 14px !important;
+        padding: 16px 16px !important;
         min-height: auto !important;
+        border-radius: 16px !important;
+        direction: rtl !important;
+        text-align: right !important;
     }
 
     .system-icon {
-        margin: 0 auto !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
     }
 
     .system-copy {
-        text-align: center !important;
+        text-align: right !important;
+        flex: 1 !important;
     }
 
     .system-copy h3 {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 14.5px !important;
+        margin: 0 0 4px !important;
+        color: #ffffff !important;
     }
 
     .system-copy p {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 12.5px !important;
+        line-height: 19px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        margin: 0 !important;
     }
 
-    /* ════ Service Cards Centering ════ */
-    .service-card {
+    /* ════ Services Section (Natural Balanced service-top & RTL Feature List) ════ */
+    .services-section .content-wrap {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        text-align: center !important;
-        justify-content: center !important;
-        padding: 26px 18px !important;
-        min-height: auto !important;
     }
 
+    .services-section .section-header-split {
+        display: contents !important;
+    }
+
+    .services-section .text-block {
+        order: 1 !important;
+        margin-bottom: 24px !important;
+        width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .services-section .service-grid {
+        order: 2 !important;
+        width: 100% !important;
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    .services-section .section-header-split .pill-button {
+        order: 3 !important;
+        margin: 24px auto 0 !important;
+        align-self: center !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        min-height: 48px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50px !important;
+    }
+
+    .service-card {
+        grid-column: span 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        text-align: right !important;
+        justify-content: flex-start !important;
+        padding: 24px 18px !important;
+        min-height: auto !important;
+        border-radius: 18px !important;
+        direction: rtl !important;
+    }
+
+    /* service-top as balanced horizontal row on mobile */
     .service-top {
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center !important;
-        justify-content: center !important;
-        gap: 8px !important;
-        margin-bottom: 14px !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        margin-bottom: 16px !important;
+        gap: 10px !important;
+        direction: rtl !important;
     }
 
     .service-number {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 26px !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        color: rgba(255, 255, 255, 0.85) !important;
     }
 
     .service-icon {
-        margin: 0 auto !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
     }
 
     .service-card h3 {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 17px !important;
-        margin-bottom: 8px !important;
+        line-height: 1.4 !important;
+        margin: 0 0 8px !important;
+        color: #ffffff !important;
     }
 
     .service-card > p {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 13px !important;
-        margin-bottom: 14px !important;
+        line-height: 21px !important;
+        margin: 0 0 14px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
     }
 
+    /* RTL Feature List: checkmark icon on the RIGHT of the text */
     .feature-list {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        text-align: right !important;
         padding: 0 !important;
         width: 100% !important;
         gap: 8px !important;
-        margin-bottom: 18px !important;
+        margin: 0 0 18px !important;
+        direction: rtl !important;
+        list-style: none !important;
     }
 
     .feature-list li {
         display: flex !important;
-        justify-content: center !important;
+        flex-direction: row-reverse !important;
+        justify-content: flex-end !important;
         align-items: center !important;
-        text-align: center !important;
+        text-align: right !important;
+        gap: 8px !important;
         width: 100% !important;
         font-size: 12.5px !important;
+        line-height: 1.4 !important;
+        direction: rtl !important;
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .feature-list li img {
+        flex-shrink: 0 !important;
+        width: 12px !important;
+        height: 10px !important;
     }
 
     .service-link {
         display: inline-flex !important;
-        justify-content: center !important;
+        flex-direction: row-reverse !important;
         align-items: center !important;
-        margin: 14px auto 0 !important;
+        justify-content: flex-end !important;
+        gap: 8px !important;
+        text-align: right !important;
+        direction: rtl !important;
+        margin-top: auto !important;
+        align-self: flex-start !important;
+        font-size: 13.5px !important;
+        font-weight: 600 !important;
+        color: var(--primary) !important;
     }
 
-    /* ════ Package Tabs & Pricing Cards Centering ════ */
+    .service-link img {
+        width: 12px !important;
+        height: 12px !important;
+        object-fit: contain !important;
+    }
+
+    /* ════ Package Tabs & Pricing Cards (RTL Aligned, Full Width CTA) ════ */
     .package-tabs-wrapper {
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
-        margin: 0 auto 20px !important;
+        margin: 0 auto 18px !important;
     }
 
     .package-tabs {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
+        gap: 8px !important;
         width: 100% !important;
         max-width: 360px !important;
         margin: 0 auto !important;
@@ -3091,7 +3395,7 @@ select {
         width: 100% !important;
         min-width: 0 !important;
         height: 44px !important;
-        padding: 0 14px !important;
+        padding: 0 10px !important;
         justify-content: center !important;
         align-items: center !important;
         border-radius: 23px !important;
@@ -3099,7 +3403,7 @@ select {
         background: rgba(255, 255, 255, 0.10) !important;
         color: #ffffff !important;
         font-family: "IBM Plex Sans Arabic", sans-serif !important;
-        font-size: 14px !important;
+        font-size: 13.5px !important;
         font-weight: 500 !important;
         white-space: nowrap !important;
         cursor: pointer !important;
@@ -3115,78 +3419,108 @@ select {
         font-weight: 600 !important;
     }
 
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
     .pricing-card {
+        grid-column: span 1 !important;
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        justify-content: center !important;
-        padding: 26px 18px !important;
+        align-items: stretch !important;
+        text-align: right !important;
+        justify-content: flex-start !important;
+        padding: 24px 18px !important;
+        border-radius: 20px !important;
+        direction: rtl !important;
     }
 
     .pricing-card-top {
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center !important;
-        justify-content: center !important;
+        justify-content: space-between !important;
         gap: 8px !important;
+        width: 100% !important;
+        direction: rtl !important;
+        margin-bottom: 8px !important;
     }
 
     .pricing-card h3 {
-        text-align: center !important;
-        font-size: 19px !important;
+        text-align: right !important;
+        font-size: 18px !important;
+        margin: 0 !important;
     }
 
     .save-badge {
-        margin: 0 auto !important;
+        margin: 0 !important;
         font-size: 10.5px !important;
+        flex-shrink: 0 !important;
     }
 
     .pricing-copy {
-        text-align: center !important;
+        text-align: right !important;
         min-height: auto !important;
         font-size: 12.5px !important;
+        line-height: 20px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
         margin: 8px 0 14px !important;
     }
 
     .price-row {
         display: flex !important;
-        justify-content: center !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
         align-items: baseline !important;
-        text-align: center !important;
+        text-align: right !important;
+        gap: 4px !important;
         width: 100% !important;
+        direction: rtl !important;
         margin-bottom: 18px !important;
     }
 
     .price-row .amount {
-        font-size: 28px !important;
+        font-size: 26px !important;
     }
 
+    /* RTL Include List: checkmark circle on the RIGHT of the text */
     .include-list {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
         padding: 0 !important;
         width: 100% !important;
         gap: 9px !important;
         margin-bottom: 20px !important;
+        direction: rtl !important;
+        list-style: none !important;
     }
 
     .include-list li {
         display: flex !important;
-        justify-content: center !important;
+        flex-direction: row-reverse !important;
+        justify-content: flex-end !important;
         align-items: center !important;
-        text-align: center !important;
+        text-align: right !important;
+        gap: 10px !important;
         width: 100% !important;
-        gap: 8px !important;
         font-size: 12.5px !important;
+        line-height: 1.4 !important;
+        direction: rtl !important;
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .include-list li .check-circle {
+        flex-shrink: 0 !important;
     }
 
     .pricing-card .gold-button {
         width: 100% !important;
         max-width: 100% !important;
-        height: 44px !important;
+        min-height: 46px !important;
         background: var(--primary) !important;
         color: #0c0c0c !important;
         border-radius: 12px !important;
@@ -3198,153 +3532,325 @@ select {
         margin-top: auto !important;
     }
 
-    /* ════ Work Cards Centering ════ */
-    .work-card {
+    /* ════ Work Section (RTL Aligned Details & Proper Button Width) ════ */
+    .work-section {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
+    }
+
+    .work-section .section-header-split {
+        display: contents !important;
+    }
+
+    .work-section .text-block {
+        order: 1 !important;
+        margin-bottom: 24px !important;
+        width: 100% !important;
+        align-items: center !important;
         text-align: center !important;
+    }
+
+    .work-section .work-grid {
+        order: 2 !important;
+        width: 100% !important;
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    .work-section .section-header-split .pill-button {
+        order: 3 !important;
+        margin: 24px auto 0 !important;
+        align-self: center !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        min-height: 48px !important;
+        display: inline-flex !important;
+        align-items: center !important;
         justify-content: center !important;
-        padding: 26px 18px !important;
+        border-radius: 50px !important;
+    }
+
+    .work-card {
+        grid-column: span 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        text-align: right !important;
+        justify-content: flex-start !important;
+        padding: 24px 18px !important;
+        border-radius: 18px !important;
+        direction: rtl !important;
     }
 
     .work-card .sector-label {
-        text-align: center !important;
+        text-align: right !important;
+        align-self: flex-start !important;
+        margin: 0 0 10px !important;
     }
 
     .work-card h3 {
-        text-align: center !important;
-        font-size: 18px !important;
+        text-align: right !important;
+        font-size: 17.5px !important;
+        line-height: 1.4 !important;
         margin-bottom: 12px !important;
+        color: #ffffff !important;
     }
 
     .work-meta {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
+        align-items: flex-start !important;
+        text-align: right !important;
+        direction: rtl !important;
         width: 100% !important;
-        gap: 7px !important;
+        gap: 8px !important;
         margin-bottom: 18px !important;
     }
 
     .work-meta p {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 12.5px !important;
-    }
-
-    .work-card .gold-button {
-        margin: 14px auto 0 !important;
-        max-width: 260px !important;
+        line-height: 20px !important;
+        margin: 0 !important;
+        color: rgba(255, 255, 255, 0.7) !important;
         width: 100% !important;
     }
 
-    /* ════ Sector Cards Centering ════ */
-    .sector-card {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        justify-content: center !important;
-        padding: 24px 18px !important;
+    .work-meta p strong {
+        color: #ffffff !important;
     }
 
-    .sector-top {
+    .work-card .gold-button {
+        margin: 14px 0 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 46px !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* ════ Sector Cards (Balanced sector-top & RTL Alignment) ════ */
+    .sectors-section {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
+    }
+
+    .sectors-section .sector-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        width: 100% !important;
+    }
+
+    .sectors-section .center-action {
+        margin-top: 24px !important;
+        display: flex !important;
         justify-content: center !important;
-        gap: 8px !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .sectors-section .center-action .pill-button {
+        width: 100% !important;
+        max-width: 320px !important;
+        min-height: 48px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+        border-radius: 50px !important;
+    }
+
+    .sector-card {
+        grid-column: span 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        text-align: right !important;
+        justify-content: flex-start !important;
+        padding: 22px 18px !important;
+        border-radius: 18px !important;
+        direction: rtl !important;
+    }
+
+    /* sector-top as balanced horizontal row */
+    .sector-top {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        gap: 10px !important;
         margin-bottom: 14px !important;
+        direction: rtl !important;
     }
 
     .sector-number {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 26px !important;
+        line-height: 1 !important;
+        margin: 0 !important;
     }
 
     .sector-icon {
-        margin: 0 auto !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
     }
 
     .sector-card h3 {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 17px !important;
-        margin-bottom: 6px !important;
+        margin: 0 0 6px !important;
+        color: #ffffff !important;
     }
 
     .sector-card p {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 12.5px !important;
+        line-height: 20px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        margin: 0 !important;
     }
 
-    /* ════ FAQ & Contact Centering ════ */
+    /* ════ FAQ & Contact Section (Clean RTL Rows & Full Width Form Buttons) ════ */
+    .faq-grid,
+    .contact-pair {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
     .newsletter-block {
-        text-align: center !important;
-        align-items: center !important;
+        text-align: right !important;
+        align-items: stretch !important;
         display: flex !important;
         flex-direction: column !important;
         padding: 24px 18px !important;
         border-radius: 20px !important;
+        direction: rtl !important;
     }
 
     .newsletter-block h3 {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 18px !important;
+        line-height: 1.4 !important;
+        margin: 0 0 8px !important;
+        color: #ffffff !important;
     }
 
     .newsletter-block p {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 13px !important;
+        line-height: 21px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        margin: 0 0 14px !important;
     }
 
     .newsletter-form {
         width: 100% !important;
-        max-width: 380px !important;
-        margin: 0 auto !important;
+        max-width: 100% !important;
+        margin: 0 0 10px !important;
         display: flex !important;
         flex-direction: column !important;
         gap: 10px !important;
     }
 
+    .newsletter-input-wrapper {
+        width: 100% !important;
+        position: relative !important;
+    }
+
     .newsletter-form input {
         width: 100% !important;
+        height: 48px !important;
+        text-align: right !important;
+        direction: rtl !important;
     }
 
     .subscribe-button {
         width: 100% !important;
-        margin-bottom: 20px;
+        min-height: 46px !important;
+        margin: 0 !important;
     }
 
     .newsletter-note {
-        text-align: center !important;
+        text-align: right !important;
+        font-size: 11.5px !important;
+        line-height: 18px !important;
+        color: rgba(255, 255, 255, 0.45) !important;
+        margin: 0 !important;
     }
 
     .faq-block {
-        text-align: center !important;
+        text-align: right !important;
         padding: 24px 18px !important;
         border-radius: 20px !important;
+        direction: rtl !important;
     }
 
-    .faq-block h3,
+    .faq-block h3 {
+        text-align: right !important;
+        font-size: 18px !important;
+        margin: 0 0 8px !important;
+        color: #ffffff !important;
+    }
+
     .faq-block > p {
-        text-align: center !important;
+        text-align: right !important;
+        font-size: 13px !important;
+        line-height: 21px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        margin: 0 0 16px !important;
+    }
+
+    .accordion-header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        text-align: right !important;
+        direction: rtl !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    .accordion-header span {
+        text-align: right !important;
+        font-size: 13.5px !important;
+        line-height: 1.4 !important;
+    }
+
+    .accordion-content {
+        text-align: right !important;
+        direction: rtl !important;
+        font-size: 13px !important;
+        line-height: 22px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .contact-pair {
+        margin-top: 16px !important;
     }
 
     .contact-card {
-        text-align: center !important;
-        align-items: center !important;
+        text-align: right !important;
+        align-items: stretch !important;
         display: flex !important;
         flex-direction: column !important;
-        padding: 26px 18px !important;
+        padding: 24px 18px !important;
         border-radius: 20px !important;
         width: 100% !important;
+        direction: rtl !important;
     }
 
     .contact-card h3 {
-        text-align: center !important;
-        font-size: 19px !important;
-        margin-bottom: 16px !important;
+        text-align: right !important;
+        font-size: 18px !important;
+        margin: 0 0 16px !important;
+        color: #ffffff !important;
     }
 
     .contact-form {
@@ -3364,73 +3870,102 @@ select {
         font-size: 12.5px !important;
     }
 
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        width: 100% !important;
+        text-align: right !important;
+        direction: rtl !important;
+    }
+
     .contact-form .submit-button {
-        margin: 18px auto 0 !important;
+        margin: 18px 0 0 !important;
         display: block !important;
         width: 100% !important;
-        max-width: 260px !important;
+        max-width: 100% !important;
+        min-height: 48px !important;
     }
 
     .info-card {
-        text-align: center !important;
-        align-items: center !important;
+        text-align: right !important;
+        align-items: stretch !important;
         display: flex !important;
         flex-direction: column !important;
-        padding: 26px 18px !important;
+        padding: 24px 18px !important;
         border-radius: 20px !important;
         width: 100% !important;
+        direction: rtl !important;
     }
 
     .info-card h3 {
-        text-align: center !important;
-        font-size: 19px !important;
-        margin-bottom: 12px !important;
+        text-align: right !important;
+        font-size: 18px !important;
+        margin: 0 0 10px !important;
+        color: #ffffff !important;
     }
 
     .info-card > p {
-        text-align: center !important;
-        font-size: 13px !important;
-        line-height: 22px !important;
-        margin-bottom: 20px !important;
+        text-align: right !important;
+        font-size: 12.5px !important;
+        line-height: 21px !important;
+        margin: 0 0 18px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
     }
 
+    /* RTL Contact rows: icon on the RIGHT, text on the LEFT */
     .contact-row {
         display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        justify-content: center !important;
-        gap: 8px !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        text-align: right !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
         width: 100% !important;
+        margin-bottom: 14px !important;
+        direction: rtl !important;
+    }
+
+    .contact-icon {
+        flex-shrink: 0 !important;
+        width: 38px !important;
+        height: 38px !important;
+        margin: 0 !important;
     }
 
     .contact-row-text {
-        text-align: center !important;
+        text-align: right !important;
+        flex: 1 !important;
     }
 
     .contact-row-text h4 {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 13.5px !important;
+        margin: 0 0 4px !important;
+        color: #ffffff !important;
     }
 
     .contact-row-text p {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 12px !important;
+        line-height: 18px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        margin: 0 !important;
     }
 
-    /* ════ Footer Centering ════ */
+    /* ════ Footer (Clean RTL Alignment & Spacing) ════ */
     .site-footer {
         padding: 32px 16px 20px !important;
+        direction: rtl !important;
     }
 
     .footer-main,
     .footer-container {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        justify-content: center !important;
-        gap: 26px !important;
+        align-items: stretch !important;
+        text-align: right !important;
+        justify-content: flex-start !important;
+        gap: 24px !important;
         width: 100% !important;
     }
 
@@ -3440,59 +3975,69 @@ select {
     .footer-contact-column {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        justify-content: center !important;
+        align-items: flex-start !important;
+        text-align: right !important;
+        justify-content: flex-start !important;
         width: 100% !important;
     }
 
     .footer-logo {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        margin: 0 auto !important;
+        align-items: flex-start !important;
+        margin: 0 !important;
     }
 
     .footer-description {
-        text-align: center !important;
+        text-align: right !important;
         max-width: 100% !important;
         font-size: 12px !important;
         line-height: 20px !important;
-        margin: 14px 0 16px !important;
+        margin: 12px 0 14px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
     }
 
     .footer-contact-list {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
         gap: 10px !important;
+        width: 100% !important;
     }
 
     .footer-contact-list a,
     .footer-contact-list span {
-        justify-content: center !important;
-        text-align: center !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: right !important;
+        gap: 8px !important;
+        direction: rtl !important;
     }
 
     .footer-column h2,
     .footer-contact-column h2 {
-        text-align: center !important;
-        margin-bottom: 8px !important;
-        font-size: 14px !important;
+        text-align: right !important;
+        margin-bottom: 10px !important;
+        font-size: 14.5px !important;
+        color: #ffffff !important;
     }
 
     .footer-column a,
     .footer-contact-column a {
-        text-align: center !important;
+        text-align: right !important;
         font-size: 12.5px !important;
+        line-height: 24px !important;
     }
 
     .footer-contact-column p {
-        text-align: center !important;
+        text-align: right !important;
         max-width: 100% !important;
         font-size: 12px !important;
         line-height: 20px !important;
+        margin: 6px 0 0 !important;
     }
 
     .footer-bottom {
@@ -3501,17 +4046,55 @@ select {
         align-items: center !important;
         justify-content: center !important;
         text-align: center !important;
-        gap: 14px !important;
-        margin-top: 28px !important;
+        gap: 12px !important;
+        margin-top: 24px !important;
         padding-top: 18px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
 
     .footer-bottom p {
         text-align: center !important;
-        font-size: 11px !important;
+        font-size: 11.5px !important;
+        margin: 0 !important;
     }
 
     .footer-social {
         justify-content: center !important;
+    }
+}
+
+/* ════ Extra-Small Devices (320px - 360px Viewports) ════ */
+@media (max-width: 360px) {
+    .content-wrap {
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+    }
+
+    .hero-section {
+        padding: 24px 12px 0 !important;
+    }
+
+    .hero-buttons .pill-button {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .package-tabs .package-tab {
+        font-size: 12px !important;
+        padding: 0 6px !important;
+    }
+
+    .service-card,
+    .work-card,
+    .sector-card,
+    .pricing-card,
+    .reason-card,
+    .system-card,
+    .contact-card,
+    .info-card,
+    .newsletter-block,
+    .faq-block {
+        padding: 18px 14px !important;
     }
 }

@@ -450,59 +450,96 @@
 }
 
 @media (max-width: 767px) {
-  .sd-wrap { padding: 0 20px; }
+  .sd-wrap { padding: 0 18px !important; }
   
+  /* Uniform section spacing */
   .sd-hero {
-    padding: 24px 0 20px;
+    padding: 36px 0 24px !important;
     text-align: center;
+  }
+
+  .sd-about,
+  .sd-process,
+  .sd-deliv,
+  .sd-quote {
+    padding: 42px 0 !important;
   }
 
   .sd-hero-title {
-    font-size: 24px;
-    line-height: 1.4;
-    text-align: center;
+    font-size: 24px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
   }
 
   .sd-hero-lead {
-    font-size: 13.5px;
-    line-height: 24px;
-    text-align: center;
-  }
-
-  .sd-about {
-    padding: 36px 0;
-    text-align: center;
+    font-size: 13.5px !important;
+    line-height: 24px !important;
+    text-align: center !important;
   }
 
   .sd-about-title,
   .sd-about-lead,
   .sd-benefits-title {
-    text-align: center;
+    text-align: center !important;
   }
 
-  .sd-benefits-grid { grid-template-columns: 1fr; gap: 12px; }
-  .sd-process-grid  { grid-template-columns: 1fr; gap: 12px; }
-  .sd-process-title { text-align: center; }
-  .sd-deliv-title   { text-align: center; }
-  .sd-deliv-row     { flex-direction: column; gap: 10px; }
-  .sd-deliv-chip    { width: 100%; flex: 1 1 100%; }
+  .sd-benefits-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .sd-benefits-card { padding: 22px 18px !important; border-radius: 18px !important; }
+
+  .sd-process-grid  { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .sd-process-card  { padding: 20px 18px !important; border-radius: 16px !important; }
+  .sd-process-title { text-align: center !important; margin-bottom: 24px !important; }
+
+  .sd-deliv-title   { text-align: center !important; margin-bottom: 20px !important; }
+  .sd-deliv-row     { flex-direction: column !important; gap: 10px !important; }
+  
+  /* RTL Deliverables: [✓] icon strictly on the RIGHT side of text */
+  .sd-deliv-chip    {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-align: right !important;
+    direction: rtl !important;
+    padding: 14px 18px !important;
+    border-radius: 14px !important;
+  }
 
   .sd-quote-header {
-    text-align: center;
-    margin-bottom: 28px;
+    text-align: center !important;
+    margin-bottom: 28px !important;
   }
   .sd-quote-header h2,
   .sd-quote-header p {
-    text-align: center;
+    text-align: center !important;
   }
 
-  .sd-form-row { grid-template-columns: 1fr; gap: 12px; }
-  .sd-info-col { flex-direction: column; gap: 12px; }
+  .sd-form-row { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .sd-info-col { flex-direction: column !important; gap: 12px !important; }
+  .sd-info-card { padding: 18px 16px !important; }
+
+  .sd-fld input,
+  .sd-fld textarea {
+    font-size: 14px !important;
+  }
+
+  .sd-submit {
+    height: 48px !important;
+    font-size: 15px !important;
+  }
 }
 
-@media (max-width: 480px) {
-  .sd-wrap { padding: 0 16px; }
-  .sd-hero-title { font-size: 20px; }
+@media (max-width: 360px) {
+  .sd-wrap { padding: 0 14px !important; }
+  .sd-hero-title { font-size: 20px !important; }
+  .sd-benefits-card,
+  .sd-process-card,
+  .sd-deliv-chip {
+    padding: 16px 14px !important;
+  }
 }
 
 .sd-info-icon img {
