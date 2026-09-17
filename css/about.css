@@ -476,7 +476,7 @@ letter-spacing: 0px;
     .feature-card {
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-start !important;
+        align-items: center !important;
         text-align: right !important;
         direction: rtl !important;
         padding: 24px 20px !important;
@@ -488,7 +488,7 @@ letter-spacing: 0px;
     }
 
     .feature-card-title {
-        text-align: right !important;
+        text-align: center;
         font-size: 18px !important;
         margin-bottom: 8px !important;
         width: 100% !important;
